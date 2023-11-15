@@ -6,62 +6,79 @@
     <title>J&H</title>
     <script src="https://kit.fontawesome.com/f988057b70.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="header.css">
 </head>
 <style>
-    @media (max-width: 1700px) {
-        .container {
-            padding:0 30px;
-        }
+    .container{
+        width:100%;
+        overflow:hidden;
+        position: relative;
     }
-    .top_menu{
-        display:flex;
-        justify-content:center;
+    .move_img{
+        width: 500vw;
+        overflow:hidden;
+        position:relative;
+        transition: transform 0.5s;
     }
-    .top_menu > li > a{
-        line-height: 60px;
-        padding: 25px 25px;
-        font-size:22px;
+    .move_img > div{
+        float: left;
+        width:20%;
     }
-    .top_menu > li > a:hover, .tools a:hover, .submenu_nav a:hover{
-        color:#FFAEC9;
-        transition: all ease 0.2s 0s;
+    div > img{
+        width:100%;
+        min-width: 1235px;
+        max-width:1920px;
     }
-    .submenu_nav a:hover{
-        text-decoration: underline;
-    }
-    .submenu_nav{
+    .banner_left, .banner_right{
         position:absolute;
-        background-color:#ffffff;
-        box-shadow: 0 1px 24px 0 rgba(0, 0, 0, 0.09);
-        padding:18px 0px;
-        display: none;
-        font-size:22px;
+        top:50%;
+        padding:15px 20px;
+        font-size:20px;
+        opacity:0.3;
+        transition: opacity 0.3s;
     }
-    .submenu_nav > li > a{
-        display:block;
-        padding:10px 35px;
+    .banner_left:hover, .banner_right:hover{
+        opacity: 1;
+        cursor: pointer;
     }
-    .gender_on a:hover + .submenu_nav, .submenu_nav:hover{
-        display: block;
+    .banner_left{
+        left: 3%;
     }
-    .tools{
-        width:25%;
-        display:flex;
-        justify-content:flex-end;
-        font-size:22px;
+    .banner_right{
+        right:3%;
     }
-    .tools a{
-        margin:30px 10px;
+    .banner_curcle{
+        position:absolute;
+        left:47.5%;
+        bottom: 3%;
+        background-color: transparent;
+        border: none;
+    }
+    .curcle1, .curcle2, .curcle3{
+        background-color: transparent;
+        border: none;
+    }
+    .curcle1:hover, .curcle2:hover, .curcle3:hover{
+        cursor: pointer;
+    }
+    .curcle1 i, .curcle2 i, .curcle3 i{
+        font-size: 12px;
+        color: #fff;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+    .curcle1:hover+i, .curcle2:hover+i, .curcle3:hover+i{
+        opacity: 1;
     }
 </style>
 <body>
-    <header style="width:100%; position: relative; box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);">
-        <div class="container" style="margin:0 auto; max-width:1600px; min-width:1400px;">
-            <div style=" display:flex; align-items:center;">
-                <div style="width:25%; padding:10px 0;">
-                    <div><a href="" style="font-size: 50px; font-weight:bold; color:#FFAEC9;">J&H</a></div>
+    <header>
+        <div class="header_area">
+            <div class="row">
+                <div class="logo_area">
+                    <div><a class="logo" href="">J&H</a></div>
                 </div>
-                <div style="width:50%; text-align: center;">
+                <div class="menu_list">
                     <ul class="top_menu">
                         <li><a href="">HOME</a></li>
                         <li class="gender_on">
@@ -81,7 +98,7 @@
                             </ul>
                         </li>
                         <li><a href="">SERVICE</a></li>
-                        <li class="gender_on" style="display:none;">
+                        <li class="gender_on" style="display:none; opacity: 0;">
                             <a href="">ADMIN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
                             <ul class="submenu_nav" >
                                 <li><a href="">유저관리</a></li>
@@ -91,7 +108,15 @@
                     </ul>
                 </div>
                 <div class="tools">
-                    <div><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></div>
+                    <div>
+                        <a href="javascript:void(0);" id="open_search" onclick="openSearch(this);"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <div class="search_area">
+                            <button type="button" onclick="closeSearch(this);" class="search_close"><i class="fa-solid fa-xmark"></i></button>
+                            <form method="post" action="" style="border:2px solid #FFAEC9; border-radius:30px; padding:10px;">
+                                <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요" autocomplete="off"><button id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </div>
                     <div><a href=""><i class="fa-solid fa-user"></i></a></div>
                     <div><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
                     <div style="font-size:20px;"><a href="">Sign UP</a></div>
@@ -99,5 +124,166 @@
             </div>
         </div>
     </header>
+    <main style="height:1500px; margin:0 auto; max-width:1920px;">
+        <div class="container" style="min-width:1220px;">
+            <div class="move_img">
+                <div>
+                    <img src='main1.jpg'>
+                </div>
+                <div>
+                    <img src='main2.jpg'>
+                </div>
+                <div>
+                    <img src='main3.jpg'>
+                </div>
+            </div>
+            <button class="banner_left" type="button" onclick="moveLeft()"><i class="fa-solid fa-angle-left" id=banner_left></i></button>
+            <button class="banner_right" type="button" onclick="moveRight()"><i class="fa-solid fa-angle-right" id="banner_right"></i></button>
+            <div class="banner_curcle">
+                <button class="curcle1"><i class="fa-solid fa-circle" id="banner_curcle1"></i></button>
+                <button class="curcle2"><i class="fa-solid fa-circle" id="banner_curcle2"></i></button>
+                <button class="curcle3"><i class="fa-solid fa-circle" id="banner_curcle3"></i></button>
+            </div>
+        </div>
+    </main>
 </body>
+<script src="openSearch.js"></script>
+<script src="fixedMenu.js"></script>
+<script>
+</script>
+<script>
+    //슬라이드를 위한 클론생성
+    const bannerList = document.querySelector('.move_img');
+    const banner = bannerList.children;
+    
+    const cloneFirst = banner[0].cloneNode(true);
+    const cloneLast =  banner[banner.length-1].cloneNode(true);
+    
+    // 마지막 클론 좌측으로 숨기기
+    window.onload = function(){
+        bannerList.style.right = ""+window.innerWidth+"px";
+        bannerList.prepend(cloneLast);
+        checkCurcle(set)
+    }
+
+
+    // 창크기에 따른 슬라이드 위치 맞추기
+    window.onresize = function(){
+        bannerList.style.right = ""+window.innerWidth+"px";
+        autoSize = - window.innerWidth * set;
+        bannerList.style.transform = 'translate('+autoSize+'px)';
+        size = autoSize;
+    }
+
+    let set = 0;
+    let size = 0;
+    let moveImg = document.querySelector('.move_img');
+    let moveBanner = setInterval(moveRight,5000);
+
+    // 오른쪽으로 슬라이드
+    function moveRight(){
+        clearInterval(moveBanner);
+        if(set == 0 ){
+            set = 1;
+            size-=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+        }
+        else if(set == 1 ){
+            set = 2;
+            size-=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+        }
+        else if(set == 2 ){
+            set = 0;
+            size-=window.innerWidth;
+            bannerList.append(cloneFirst);
+            moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                moveImg.style.transition = 'none';
+                size = 0;
+                moveImg.style.transform = 'translate('+size+'px)';
+                setTimeout(function(){
+                    moveImg.style.transition = 'transform 0.5s';
+                    cloneFirst.remove();
+                },30)
+            },400)
+        }
+        checkCurcle(set)
+        moveBanner =  setInterval(moveRight,5000);
+    }
+
+    // 왼쪽으로 슬라이드
+    function moveLeft(){
+        clearInterval(moveBanner);
+        if(set == 0 ){
+            set = 2;
+            size+=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                moveImg.style.transition = 'none';
+                size = 0 - window.innerWidth - window.innerWidth;
+                moveImg.style.transform = 'translate('+size+'px)';
+                setTimeout(function(){
+                    moveImg.style.transition = 'transform 0.5s';
+                    cloneFirst.remove();
+                },100)
+            },400)
+        }
+        else if(set == 2 ){
+            set = 1;
+            size+=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+        }
+        else if(set == 1 ){
+            set = 0;
+            size+=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+        }
+        checkCurcle(set)
+        moveBanner =  setInterval(moveRight,5000);
+    }
+
+
+    // 슬라이드 원클릭시 해당 슬라이드 이동
+    document.querySelector('.curcle1').addEventListener('click', function(){
+        clearInterval(moveBanner);
+        set=0;
+        size = 0;
+        moveImg.style.transform = 'translate('+size+'px)';
+        checkCurcle(set);
+        moveBanner =  setInterval(moveRight,5000);
+    });
+    document.querySelector('.curcle2').addEventListener('click', function(){
+        clearInterval(moveBanner);
+        set=1;
+        size = 0 - window.innerWidth;
+        moveImg.style.transform = 'translate('+size+'px)';
+        checkCurcle(set);
+        moveBanner =  setInterval(moveRight,5000);
+    });
+    document.querySelector('.curcle3').addEventListener('click', function(){
+        clearInterval(moveBanner);
+        set=2;
+        size = 0 - window.innerWidth - window.innerWidth;
+        moveImg.style.transform = 'translate('+size+'px)';
+        checkCurcle(set);
+        moveBanner =  setInterval(moveRight,5000);
+    });
+
+    function checkCurcle(set){
+        if(set==0){
+        document.querySelector('#banner_curcle1').style.opacity = '1';
+        document.querySelector('#banner_curcle2').style.opacity = '0.5';
+        document.querySelector('#banner_curcle3').style.opacity = '0.5';
+        }else if(set==1){
+        document.querySelector('#banner_curcle1').style.opacity = '0.5';
+        document.querySelector('#banner_curcle2').style.opacity = '1';
+        document.querySelector('#banner_curcle3').style.opacity = '0.5';
+        }else if(set==2){
+        document.querySelector('#banner_curcle1').style.opacity = '0.5';
+        document.querySelector('#banner_curcle2').style.opacity = '0.5';
+        document.querySelector('#banner_curcle3').style.opacity = '1';
+        }
+    }
+</script>
 </html>
