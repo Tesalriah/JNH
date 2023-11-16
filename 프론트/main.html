@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,11 @@
         width:100%;
         overflow:hidden;
         position: relative;
+        min-width: 1235px;
+        max-height:1080px;
     }
     .move_img{
         width: 500vw;
-        overflow:hidden;
         position:relative;
         transition: transform 0.5s;
     }
@@ -24,9 +25,9 @@
         float: left;
         width:20%;
     }
-    div > img{
+    .banner > img{
         width:100%;
-        min-width: 1235px;
+        height:auto;
         max-width:1920px;
     }
     .banner_left, .banner_right{
@@ -70,6 +71,18 @@
     .curcle1:hover+i, .curcle2:hover+i, .curcle3:hover+i{
         opacity: 1;
     }
+    .asd{
+        width: 100%;
+        display:flex;
+        justify-content: center;
+    }
+    .asd div{
+        width:100%;
+        position:relative;
+    }
+    .asd img{
+        width: 50%;
+    }
 </style>
 <body>
     <header>
@@ -109,9 +122,9 @@
                 </div>
                 <div class="tools">
                     <div>
-                        <a href="javascript:void(0);" id="open_search" onclick="openSearch(this);"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="javascript:void(0);" id="open_search"><i class="fa-solid fa-magnifying-glass"></i></a>
                         <div class="search_area">
-                            <button type="button" onclick="closeSearch(this);" class="search_close"><i class="fa-solid fa-xmark"></i></button>
+                            <button id="close_search" type="button" class="search_close"><i class="fa-solid fa-xmark"></i></button>
                             <form method="post" action="" style="border:2px solid #FFAEC9; border-radius:30px; padding:10px;">
                                 <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요" autocomplete="off"><button id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
@@ -127,22 +140,38 @@
     <main style="height:1500px; margin:0 auto; max-width:1920px;">
         <div class="container" style="min-width:1220px;">
             <div class="move_img">
-                <div>
+                <div class="banner">
                     <img src='main1.jpg'>
                 </div>
-                <div>
+                <div class="banner">
                     <img src='main2.jpg'>
                 </div>
-                <div>
+                <div class="banner">
                     <img src='main3.jpg'>
                 </div>
             </div>
-            <button class="banner_left" type="button" onclick="moveLeft()"><i class="fa-solid fa-angle-left" id=banner_left></i></button>
-            <button class="banner_right" type="button" onclick="moveRight()"><i class="fa-solid fa-angle-right" id="banner_right"></i></button>
+            <button class="banner_left"><i class="fa-solid fa-angle-left" id=banner_left></i></button>
+            <button class="banner_right"><i class="fa-solid fa-angle-right" id="banner_right"></i></button>
             <div class="banner_curcle">
                 <button class="curcle1"><i class="fa-solid fa-circle" id="banner_curcle1"></i></button>
                 <button class="curcle2"><i class="fa-solid fa-circle" id="banner_curcle2"></i></button>
                 <button class="curcle3"><i class="fa-solid fa-circle" id="banner_curcle3"></i></button>
+            </div>
+        </div>
+        <div class="asd">
+            <div>
+                <img src="img/men.jpg" boder="0" width="800" height="1000">
+            </div>
+            <div>
+                <img src="img/women.jpg" width="800" height="1000">
+            </div>
+        </div>
+        <div class="asd">
+            <div>
+                <img src="img/best.jpg" width="800" height="1000">
+            </div>
+            <div>
+                <img src="img/weekly.jpg" width="800" height="1000">
             </div>
         </div>
     </main>
@@ -177,10 +206,55 @@
 
     let set = 0;
     let size = 0;
-    let moveImg = document.querySelector('.move_img');
+    const moveImg = document.querySelector('.move_img');
+    const bannerLeft = document.querySelector('.banner_left');
+    const bannerRight = document.querySelector('.banner_right');
     let moveBanner = setInterval(moveRight,5000);
 
-    // 오른쪽으로 슬라이드
+    // 버튼 클릭시 오른쪽으로 슬라이드
+    bannerRight.addEventListener('click',function(){
+        clearInterval(moveBanner);
+        if(set == 0 ){
+            set=null;
+            size-=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                set = 1;
+                checkCurcle(set)
+            },500)
+        }
+        else if(set == 1 ){
+            set=null;
+            size-=window.innerWidth;
+            moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                set = 2;
+                checkCurcle(set)
+            },500)
+        }
+        else if(set == 2 ){
+            set=null;
+            size-=window.innerWidth;
+            bannerList.append(cloneFirst);
+            moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                moveImg.style.transition = 'none';
+                size = 0;
+                moveImg.style.transform = 'translate('+size+'px)';
+                setTimeout(function(){
+                    moveImg.style.transition = 'transform 0.5s';
+                    cloneFirst.remove();
+                },100)
+            },400)
+            setTimeout(function(){
+                set = 0;
+                checkCurcle(set)
+            },500)
+        }
+        moveBanner =  setInterval(moveRight,5000);
+    })
+
+    // 자동 오른쪽으로 슬라이드
     function moveRight(){
         clearInterval(moveBanner);
         if(set == 0 ){
@@ -205,18 +279,18 @@
                 setTimeout(function(){
                     moveImg.style.transition = 'transform 0.5s';
                     cloneFirst.remove();
-                },30)
+                },100)
             },400)
         }
         checkCurcle(set)
         moveBanner =  setInterval(moveRight,5000);
     }
 
-    // 왼쪽으로 슬라이드
-    function moveLeft(){
+    // 클릭시 왼쪽으로 슬라이드
+    bannerLeft.addEventListener('click',function(){
         clearInterval(moveBanner);
         if(set == 0 ){
-            set = 2;
+            set = null;
             size+=window.innerWidth;
             moveImg.style.transform = 'translate('+size+'px)';
             setTimeout(function(){
@@ -228,23 +302,34 @@
                     cloneFirst.remove();
                 },100)
             },400)
+            setTimeout(function(){
+                set = 2;
+                checkCurcle(set)
+            },500)
         }
         else if(set == 2 ){
-            set = 1;
+            set = null;
             size+=window.innerWidth;
             moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                set = 1;
+                checkCurcle(set)
+            },500)
         }
         else if(set == 1 ){
-            set = 0;
+            set = null;
             size+=window.innerWidth;
             moveImg.style.transform = 'translate('+size+'px)';
+            setTimeout(function(){
+                set = 0;
+                checkCurcle(set)
+            },500)
         }
-        checkCurcle(set)
         moveBanner =  setInterval(moveRight,5000);
-    }
+    })
 
 
-    // 슬라이드 원클릭시 해당 슬라이드 이동
+    // 슬라이드 공모양 클릭시 해당 슬라이드 이동
     document.querySelector('.curcle1').addEventListener('click', function(){
         clearInterval(moveBanner);
         set=0;
