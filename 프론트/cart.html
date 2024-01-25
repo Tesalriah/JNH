@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f988057b70.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>J&H</title>
+</head>
+<style>
+.container > form{
+    width:90%;
+    margin:0 auto;
+}
+.title{
+    font-size:35px;
+    font-weight:bold;
+    color: #FFAEC9;
+}
+.title > div{
+    margin:75px auto;
+    width:160px;
+}
+button,input[type="submit"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.list_option{
+    font-size:14px;
+    padding:5px;
+    border-top:1px solid #dddddd;
+    border-bottom:1px solid #dddddd;
+    background-color:#eeeeee;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+button[type="submit"]:hover{
+    cursor: pointer;
+    background-color:#DC98AF;
+}
+button[type="submit"]{
+    border:1px solid #FFAEC9;
+    color:#ffffff;
+    background-color:#FFAEC9;
+    border-radius: 2px;
+    padding:5px 10px;
+    width:113px;
+}
+.wish_list li{
+    display:flex;
+    justify-content: space-between;
+    padding:10px 5px;
+    align-items:center;
+    border-bottom:1px solid #dddddd;
+}
+.img_href{
+    margin-left:10px;
+}
+.img_href img{
+    width:150px;
+    height:150px;
+}
+.product_info{
+    width:50%;
+    font-size:15px;
+    font-weight:bold;
+}
+.list_button button:hover{
+    cursor:pointer;
+}
+.list_button button{
+    width:113px;
+    height:30px;
+    font-size:12px;
+    color:#FFAEC9;
+    background-color:#ffffff;
+    border:1px solid #FFAEC9;
+    border-radius:2px;
+}
+.quantity{
+    width:30px;
+    text-align:center;
+}
+.quantity_minus, .quantity_plus{
+    background-color: #FFAEC9;
+    color:#fff;
+}
+.quantity_minus:hover, .quantity_plus:hover{
+    cursor: pointer;
+}
+.paging{
+    text-align:center;
+    margin-top:50px;
+}
+.paging a:hover{
+    font-weight:bold;
+}
+.paging a{
+    padding:5px;
+}
+.end_list{
+    background-color:#eeeeee;
+    border-bottom:1px solid #dddddd;
+}
+.end_list > div {
+    text-align:right;
+    padding:30px;
+    font-size:18px;
+}
+.end_button_area{
+    margin-bottom:100px;
+}
+.end_button_area > div{
+    margin:0 auto;
+    width:270px;
+    margin-top:30px;
+    text-align: center;
+}
+.end_button{
+    font-size:20px;
+    padding:15px;
+    background-color:#FFAEC9;
+    color:#fff;
+    border-radius:5px;
+}
+.end_button:hover{
+    cursor:pointer;
+    background-color:#DC98AF;
+}
+
+</style>
+<body>
+    <header>
+        <div class="header_area">
+            <div class="row">
+                <div class="logo_area">
+                    <div><a class="logo" href="">J&H</a></div>
+                </div>
+                <div class="menu_list">
+                    <ul class="top_menu">
+                        <li><a href="">HOME</a></li>
+                        <li class="gender_on">
+                            <a href="">MEN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu_nav">
+                                <li><a href="">TOPS</a></li>
+                                <li><a href="">BOTTOM</a></li>
+                                <li><a href="">OUTER</a></li>
+                            </ul>
+                        </li>
+                        <li class="gender_on">
+                            <a href="">WOMEN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu_nav">
+                                <li><a href="">TOPS</a></li>
+                                <li><a href="">BOTTOM</a></li>
+                                <li><a href="">OUTER</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">SERVICE</a></li>
+                        <li class="gender_on" style="display:none; opacity: 0;">
+                            <a href="">ADMIN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu_nav" >
+                                <li><a href="">유저관리</a></li>
+                                <li><a href="">상품관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tools">
+                    <div>
+                        <a href="javascript:void(0);" id="open_search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <div class="search_area">
+                            <button id="close_search" type="button" class="search_close"><i class="fa-solid fa-xmark"></i></button>
+                            <form method="post" action="">
+                                <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요" autocomplete="off"><button id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div><a href="login.html"><i class="fa-solid fa-user"></i></a></div>
+                    <div><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                    <div><a href="terms.html">Sign UP</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="title">
+                <div>Wish List</div>
+            </div>
+            <form action="" method="post" >
+                <div class="list_option">
+                    <div style="width:16%;">
+                        <input type="checkbox" id="delete_all" class="select_all" onclick="selectAll(this)"><label for="delete_all">&nbsp;전체 선택</label>
+                    </div>
+                    <div style="width:50%;">상품정보</div>
+                    <div style="width:15%; text-align:center;">수량</div>
+                    <div>
+                        <button type="submit">선택삭제</button>
+                    </div>
+                </div>
+                <ul class="wish_list">
+                    <li>
+                        <div style="display:flex; width:16%;">
+                            <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                            <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        </div>
+                        <div class="product_info">
+                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            0원<input type="hidden" name="price" value="0">
+                        </div>
+                        <div style="width:15%; text-align:center;">
+                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                        </div>
+                        <div class="list_button">
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="display:flex; width:16%;">
+                            <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                            <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        </div>
+                        <div class="product_info">
+                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            0원<input type="hidden" name="price" value="0">
+                        </div>
+                        <div style="width:15%; text-align:center;">
+                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                        </div>
+                        <div class="list_button">
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="display:flex; width:16%;">
+                            <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                            <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        </div>
+                        <div class="product_info">
+                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            0원<input type="hidden" name="price" value="0">
+                        </div>
+                        <div style="width:15%; text-align:center;">
+                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                        </div>
+                        <div class="list_button">
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="display:flex; width:16%;">
+                            <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                            <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        </div>
+                        <div class="product_info">
+                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            0원<input type="hidden" name="price" value="0">
+                        </div>
+                        <div style="width:15%; text-align:center;">
+                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                        </div>
+                        <div class="list_button">
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="display:flex; width:16%;">
+                            <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                            <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        </div>
+                        <div class="product_info">
+                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            0원<input type="hidden" name="price" value="0">
+                        </div>
+                        <div style="width:15%; text-align:center;">
+                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                        </div>
+                        <div class="list_button">
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="display:flex; width:16%;">
+                            <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                            <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        </div>
+                        <div class="product_info">
+                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            0원<input type="hidden" name="price" value="0">
+                        </div>
+                        <div style="width:15%; text-align:center;">
+                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                        </div>
+                        <div class="list_button">
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="end_list">
+                    <div>
+                        총 주문금액 0 원
+                    </div>
+                </div>
+                <div class="end_button_area">
+                    <div>
+                        <button class="end_button" type="button">구매하기</button>
+                        <button class="end_button" type="button">계속쇼핑하기</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="shopInfo">
+                <div class="logo" style="color:#fff;"><a href="main.html">J&H</a></div>
+                <ul class="terms">
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                </ul>
+                <div class="Info"><span>J&H</span><span>서울특별시 OO구 OO로OO길 OO빌딩 OOOO호</span><span>대표자 OOO</span><span>support@JNH.co.kr</span></div>
+                <div class="Info" style="padding-top:5px;"><span>사업자등록번호 000-00-00000</span></div>
+                <p>Copyright J&H. All Rights Reserved.</p>
+                <ul class="sns">
+                    <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/?locale=ko_KR"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"> <i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="area_right">
+                <div class="cs">고객센터 <a href="tel:1544-0000">1544-0000</a></div>
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="">회사소개</a></li>
+                        <li><a href="">매장안내</a></li>
+                        <li><a href="">단체구매</a></li>
+                        <li><a href="">공지사항</a></li>
+                    </ul><a href="">
+                    <ul><a href="">
+                        <li><a href="">문의</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">이벤트</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="js/cart.js"></script>
+<script src="js/openSearch.js"></script>
+<script src="js/fixedMenu.js"></script>
+<script src="js/wishList.js"></script>
+</html>

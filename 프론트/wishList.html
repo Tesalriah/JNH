@@ -6,8 +6,8 @@
     <script src="https://kit.fontawesome.com/f988057b70.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/wishList.css">
     <title>J&H</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
                             </ul>
                         </li>
                         <li><a href="">SERVICE</a></li>
-                        <li class="gender_on" style="display:none;">
+                        <li class="gender_on" style="display:none; opacity: 0;">
                             <a href="">ADMIN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
                             <ul class="submenu_nav" >
                                 <li><a href="">유저관리</a></li>
@@ -58,64 +58,93 @@
                     </div>
                     <div><a href="login.html"><i class="fa-solid fa-user"></i></a></div>
                     <div><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
-                    <div style="font-size:20px;"><a href="terms.html">Sign UP</a></div>
+                    <div><a href="terms.html">Sign UP</a></div>
                 </div>
             </div>
         </div>
     </header>
     <main>
         <div class="container">
-            <div class="move_img">
-                <div class="banner">
-                    <div class="banner_writing">
-                        J&H
-                        <div style="color:#333333">Make a Trandy</div>
-                    </div>
-                    <img src='img/main1.jpg'>
-                </div>
-                <div class="banner">
-                    <div class="banner_writing">
-                        STYLE
-                        <div>Found Your Style</div>
-                    </div>
-                    <img src='img/main2.jpg'>
-                </div>
-                <div class="banner">
-                    <div class="banner_writing">
-                        POPULAR
-                        <div>Here Is You Want</div>
-                    </div>
-                    <img src='img/main3.jpg'>
-                </div>
+            <div class="title">
+                <div>Wish List</div>
             </div>
-            <button class="banner_left"><i class="fa-solid fa-angle-left" id=banner_left></i></button>
-            <button class="banner_right"><i class="fa-solid fa-angle-right" id="banner_right"></i></button>
-            <div class="banner_curcle">
-                <button class="curcle1"><i class="fa-solid fa-circle" id="banner_curcle1"></i></button>
-                <button class="curcle2"><i class="fa-solid fa-circle" id="banner_curcle2"></i></button>
-                <button class="curcle3"><i class="fa-solid fa-circle" id="banner_curcle3"></i></button>
-            </div>
-        </div>
-        <div class="menu_nav">
-            <div class="two_menu">
-                <div class="menu_img" onclick="location.href=''">
-                    <div>MEN</div>
-                    <img src="img/men.jpg">
+            <form action="" method="post" >
+                <div class="list_option">
+                    <div>
+                        <input type="checkbox" id="delete_all" class="select_all" onclick="selectAll(this)"><label for="delete_all">&nbsp;전체 선택</label>
+                    </div>
+                    <input type="submit" value="선택삭제">
                 </div>
-                <div class="menu_img" onclick="location.href=''">
-                    <div>WOMEN</div>
-                    <img src="img/women.jpg">
-                </div>
-            </div>
-            <div class="two_menu">
-                <div class="menu_img" onclick="location.href=''">
-                    <div>BEST</div>
-                    <img src="img/best.jpg">
-                </div>
-                <div class="menu_img" onclick="location.href=''">
-                    <div>WEEKLY PICK</div>
-                    <img src="img/weekly.jpg">
-                </div>
+                <ul class="wish_list">
+                    <li>
+                        <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                        <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        <div class="product_info">
+                            상품명<br><br>
+                            0원
+                        </div>
+                        <div class="list_button">
+                            <button>장바구니에 담기</button><br><br>
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                        <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        <div class="product_info">
+                            상품명<br><br>
+                            0원
+                        </div>
+                        <div class="list_button">
+                            <button>장바구니에 담기</button><br><br>
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                        <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        <div class="product_info">
+                            상품명<br><br>
+                            0원
+                        </div>
+                        <div class="list_button">
+                            <button>장바구니에 담기</button><br><br>
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                        <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        <div class="product_info">
+                            상품명<br><br>
+                            0원
+                        </div>
+                        <div class="list_button">
+                            <button>장바구니에 담기</button><br><br>
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="delete_check" name="" onclick="checkAll(this)">
+                        <a class="img_href" href="#"><img src="product_4.jpg"></a>
+                        <div class="product_info">
+                            상품명<br><br>
+                            0원
+                        </div>
+                        <div class="list_button">
+                            <button>장바구니에 담기</button><br><br>
+                            <button>삭제</button>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+            <div class="paging">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">></a>
             </div>
         </div>
     </main>
@@ -156,8 +185,7 @@
         </div>
     </footer>
 </body>
-<script src="js/mainMenu.js"></script>
 <script src="js/openSearch.js"></script>
 <script src="js/fixedMenu.js"></script>
-<script src="js/bannerSlide.js"></script>
+<script src="js/wishList.js"></script>
 </html>

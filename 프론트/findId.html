@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/f988057b70.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/findId.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>J&H</title>
 </head>
@@ -15,7 +15,7 @@
         <div class="header_area">
             <div class="row">
                 <div class="logo_area">
-                    <div><a class="logo" href="">J&H</a></div>
+                    <div><a class="logo" href="main.html">J&H</a></div>
                 </div>
                 <div class="menu_list">
                     <ul class="top_menu">
@@ -37,7 +37,7 @@
                             </ul>
                         </li>
                         <li><a href="">SERVICE</a></li>
-                        <li class="gender_on" style="display:none;">
+                        <li class="gender_on" style="display:none; opacity: 0;">
                             <a href="">ADMIN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
                             <ul class="submenu_nav" >
                                 <li><a href="">유저관리</a></li>
@@ -58,64 +58,42 @@
                     </div>
                     <div><a href="login.html"><i class="fa-solid fa-user"></i></a></div>
                     <div><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
-                    <div style="font-size:20px;"><a href="terms.html">Sign UP</a></div>
+                    <div><a href="terms.html">Sign UP</a></div>
                 </div>
             </div>
         </div>
     </header>
     <main>
         <div class="container">
-            <div class="move_img">
-                <div class="banner">
-                    <div class="banner_writing">
-                        J&H
-                        <div style="color:#333333">Make a Trandy</div>
-                    </div>
-                    <img src='img/main1.jpg'>
-                </div>
-                <div class="banner">
-                    <div class="banner_writing">
-                        STYLE
-                        <div>Found Your Style</div>
-                    </div>
-                    <img src='img/main2.jpg'>
-                </div>
-                <div class="banner">
-                    <div class="banner_writing">
-                        POPULAR
-                        <div>Here Is You Want</div>
-                    </div>
-                    <img src='img/main3.jpg'>
-                </div>
+            <div class="title">계정정보 찾기</div>
+            <div class="select_var">
+                <ul class="select_list">
+                    <li>
+                        <a href="#" class="select_id">아이디 찾기</a>
+                    </li>
+                    <li>
+                        <a href="findPwd.html" class="select_pwd">비밀번호 찾기</a>
+                    </li>
+                </ul>
             </div>
-            <button class="banner_left"><i class="fa-solid fa-angle-left" id=banner_left></i></button>
-            <button class="banner_right"><i class="fa-solid fa-angle-right" id="banner_right"></i></button>
-            <div class="banner_curcle">
-                <button class="curcle1"><i class="fa-solid fa-circle" id="banner_curcle1"></i></button>
-                <button class="curcle2"><i class="fa-solid fa-circle" id="banner_curcle2"></i></button>
-                <button class="curcle3"><i class="fa-solid fa-circle" id="banner_curcle3"></i></button>
-            </div>
-        </div>
-        <div class="menu_nav">
-            <div class="two_menu">
-                <div class="menu_img" onclick="location.href=''">
-                    <div>MEN</div>
-                    <img src="img/men.jpg">
-                </div>
-                <div class="menu_img" onclick="location.href=''">
-                    <div>WOMEN</div>
-                    <img src="img/women.jpg">
-                </div>
-            </div>
-            <div class="two_menu">
-                <div class="menu_img" onclick="location.href=''">
-                    <div>BEST</div>
-                    <img src="img/best.jpg">
-                </div>
-                <div class="menu_img" onclick="location.href=''">
-                    <div>WEEKLY PICK</div>
-                    <img src="img/weekly.jpg">
-                </div>
+            <div class="table_area">
+                <form method="post" action="">
+                    <table class="info">
+                        <tr>
+                            <td class="table_bg_color">이름</td>
+                            <td class="border_left"><input class="input_text" type="text" name="name"></td>
+                        </tr>
+                        <tr>
+                            <td class="table_bg_color">이메일</td>
+                            <td class="border_left"><input class="input_text" type="text" name="email">&nbsp;<button type="button" class="send_email">인증번호 전송</button></td>
+                        </tr>
+                        <tr>
+                            <td class="table_bg_color">인증번호</td>
+                            <td class="border_left"><input class="input_text" type="text" name="code_number"></td>
+                        </tr>
+                    </table>
+                </form>
+                <button type="submit" id="submit">제출</button>
             </div>
         </div>
     </main>
@@ -156,8 +134,6 @@
         </div>
     </footer>
 </body>
-<script src="js/mainMenu.js"></script>
 <script src="js/openSearch.js"></script>
 <script src="js/fixedMenu.js"></script>
-<script src="js/bannerSlide.js"></script>
 </html>
