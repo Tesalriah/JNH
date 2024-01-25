@@ -11,7 +11,7 @@ const header = document.querySelector('header');
             exCheck=0;
         }
         if(window.scrollY >= headerHeight){
-            header.style.position = 'fixed';
+            header.style.position = 'sticky';
             exCheck++;
             if(exCheck == 1){
                 header.style.opacity = '0';
