@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f988057b70.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>J&H</title>
+</head>
+<style>
+    .container{
+        padding:30px;
+        width: 100%;
+    }
+    .payment{
+        border-radius:15px;
+        margin:0 auto;
+        padding:30px;
+        width:90%;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+    .title{
+        font-size:28px;
+        font-weight: bold;
+        border-bottom: 1px solid #555555;
+        padding:0 20px 20px 20px;
+    }
+    .subheading{
+        padding:20px;
+        font-size:20px;
+    }
+    .payment td{
+        padding: 15px;
+        text-align: center;
+    }
+    .payment table tr:first-child{
+        border-top:1px solid black;
+    }
+</style>
+<body>
+    <header>
+        <div class="header_area">
+            <div class="row">
+                <div class="logo_area">
+                    <div><a class="logo" href="">J&H</a></div>
+                </div>
+                <div class="menu_list">
+                    <ul class="top_menu">
+                        <li><a href="">HOME</a></li>
+                        <li class="gender_on">
+                            <a href="">MEN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu_nav">
+                                <li><a href="">TOPS</a></li>
+                                <li><a href="">BOTTOM</a></li>
+                                <li><a href="">OUTER</a></li>
+                            </ul>
+                        </li>
+                        <li class="gender_on">
+                            <a href="">WOMEN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu_nav">
+                                <li><a href="">TOPS</a></li>
+                                <li><a href="">BOTTOM</a></li>
+                                <li><a href="">OUTER</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">SERVICE</a></li>
+                        <li class="gender_on" style="display:none; opacity: 0;">
+                            <a href="">ADMIN&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu_nav" >
+                                <li><a href="">유저관리</a></li>
+                                <li><a href="">상품관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tools">
+                    <div>
+                        <a href="javascript:void(0);" id="open_search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <div class="search_area">
+                            <button id="close_search" type="button" class="search_close"><i class="fa-solid fa-xmark"></i></button>
+                            <form method="post" action="">
+                                <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요" autocomplete="off"><button id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div><a href="login.html"><i class="fa-solid fa-user"></i></a></div>
+                    <div><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                    <div><a href="terms.html">Sign UP</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="payment">
+                <div class="title">주문 / 결제</div>
+                <div class="subheading">구매자 정보</div>
+                <table border="1">
+                    <tr>
+                        <td>이름</td>
+                        <td>홍길동</td>
+                    </tr>
+                    <tr>
+                        <td>이메일</td>
+                        <td>hong12@naver.com</td>
+                    </tr>
+                    <tr>
+                        <td>휴대폰 번호</td>
+                        <td>010-0000-0000</td>
+                    </tr>
+                </table>
+                <div class="subheading">받는사람 정보</div>
+                <table>
+                    <tr>
+                        <td>이름</td>
+                        <td><input name="name" type="text" value="홍길동"></td>
+                    </tr>
+                    <tr>
+                        <td>배송주소</td>
+                        <td><input name="adress" type="text" value="서울시 노원구 OO아파트 000호"></td>
+                    </tr>
+                    <tr>
+                        <td>연락처</td>
+                        <td><input name="adress" type="text" value="010-0000-0000"></td>
+                    </tr>
+                    <tr>
+                        <td>배송 요청사항</td>
+                        <td>
+                            <select name="delivery_req">
+                                <option value="" selected style="display: none;">배송요청사항 선택</option>
+                                <option value="문앞에 두고가주세요">문앞에 두고가주세요</option>
+                                <option value="경비실에 맡겨주세요">경비실에 맡겨주세요</option>
+                                <option value="배송시 연락주세요">배송시 연락주세요</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>총 상품가격</td>
+                        <td>150,000</td>
+                    </tr>
+                    <tr>
+                        <td>배송비</td>
+                        <td>3,000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>총결재금액</td>
+                        <td>153,000</td>
+                    </tr>
+                    <tr>
+                        <td>결제방법</td>
+                        <td>
+                            <input name="method" type="radio" id="account"><label for="account">계좌이체</label>
+                            <input name="method" type="radio" id="card"><label for="card">신용/체크카드</label>
+                            <input name="method" type="radio" id="phone"><label for="phone">휴대폰</label>
+                            <input name="method" type="radio" id="bank"><label for="bank">무통장입금(가상계좌)</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="shopInfo">
+                <div class="logo" style="color:#fff;"><a href="main.html">J&H</a></div>
+                <ul class="terms">
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                </ul>
+                <div class="Info"><span>J&H</span><span>서울특별시 OO구 OO로OO길 OO빌딩 OOOO호</span><span>대표자 OOO</span><span>support@JNH.co.kr</span></div>
+                <div class="Info" style="padding-top:5px;"><span>사업자등록번호 000-00-00000</span></div>
+                <p>Copyright J&H. All Rights Reserved.</p>
+                <ul class="sns">
+                    <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/?locale=ko_KR"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"> <i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="area_right">
+                <div class="cs">고객센터 <a href="tel:1544-0000">1544-0000</a></div>
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="">회사소개</a></li>
+                        <li><a href="">매장안내</a></li>
+                        <li><a href="">단체구매</a></li>
+                        <li><a href="">공지사항</a></li>
+                    </ul><a href="">
+                    <ul><a href="">
+                        <li><a href="">문의</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">이벤트</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="js/openSearch.js"></script>
+<script src="js/fixedMenu.js"></script>
+</html>

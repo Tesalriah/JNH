@@ -1,4 +1,4 @@
-let quantity = document.querySelectorAll('.quantity');
+let quantity = document.getElementsByName('quantity');
 const q_minus = document.querySelectorAll('.quantity_minus');
 const q_plus = document.querySelectorAll('.quantity_plus');
 
@@ -26,5 +26,5 @@ for(let i=0; i<quantity.length; i++){
         if(n_quantity <= 100){
             quantity[i].value = String(n_quantity);
         }
-})
+    })
 }
