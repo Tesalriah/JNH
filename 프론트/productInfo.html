@@ -7,96 +7,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/productInfo.css">
+    <link rel="stylesheet" href="css/reviewNquestion.css">
     <title>J&H</title>
 </head>
-<style>
-    .container{
-        padding:0 30px;
-        margin:0 auto;
-    }
-    .move{
-        margin:40px 0;
-    }
-    .product_info{
-        width:100%;
-        display:flex;
-        justify-content:space-between;
-    }
-    .product_info img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-    }
-    .name, .price{
-        font-size:24px;
-    }
-    .price{
-        padding-bottom:40px;
-        padding-top:25px;
-    }
-    .price del{
-        font-size:14px;
-        color: #dddddd;
-    }
-    .delivery_fee{
-        font-weight:bold;
-        border-top:1px solid #dddddd;
-        border-bottom:1px solid #dddddd;
-        padding:50px 0;
-    }
-    .delivery_fee, .color, .size, .product_button{
-        display:flex;
-        align-items: center;
-    }
-    .delivery_fee div:first-child , .color div:first-child, .size div:first-child{
-        color:#cccccc;
-        width:30%;
-    }
-    .color{
-        font-weight:bold;
-        padding:50px 0 30px 0;
-    }
-    .color select{
-        padding:5px 0;
-        font-size:18px;
-        width:60%;
-    }
-    .size{
-        padding:10px 0 50px 0;
-        font-weight:bold;
-        border-bottom:1px solid #dddddd;
-    }
-    .size button{
-        font-size:18px;
-        border:1px solid #dddddd;
-        background-color:#fff;
-        padding:5px 10px;
-        margin-right:20px;
-    }
-    .size button:hover{
-        cursor:pointer;
-    }
-    .product_button{
-        padding-top:50px;
-        justify-content: space-around;
-    }
-    .product_button button{
-        width:45%;
-        font-size:24px;
-        font-weight:bold;
-        padding:30px 0;
-        background-color:#ffffff;
-        border:1px solid #cccccc;
-    }
-    .product_button button:hover{
-        cursor: pointer;
-    }
-    .product_button button:last-child{
-        background-color: #FFAEC9;
-        border:1px solid #FFAEC9;
-        color:#ffffff;
-    }
-</style>
 <body>
     <header>
         <div class="header_area">
@@ -157,30 +71,302 @@
                     <a href="">HOME</a> > <a href="">WOMEN</a> > TOPS
                 </div>
             </div>
+            <!-- 상품정보 -->
             <div class="product_info">
-                <div class="product_img" style="width:45%;">
+                <div class="product_img">
                     <img src="img/weekly.jpg">
                 </div>
                 <div class="info" style="width:45%;">
-                    <div class="name">PRODUCT NAME</div>
-                    <div class="price">150,000₩&nbsp;<del>200,000₩</del></div>
-                    <div class="delivery_fee"><div>Delivery Fee</div><div>3,000₩</div></div>
-                    <div class="color">
-                        <div>Color</div>
-                        <select disabled><option value="">Begie</option><option value="White" selected>White</option></select></div>
-                    <div class="size">
-                        <div>Size</div>
-                        <div>
-                            <button type="button">S</button>
-                            <button type="button">M</button>
-                            <button type="button">L</button>
-                            <button type="button">XL</button>
+                    <form action="" method="post">
+                        <div class="name">PRODUCT NAME</div>
+                        <div class="price"><input name="price" type="hidden" value="150000">150,000₩&nbsp;<del>200,000₩</del></div>
+                        <div class="delivery_fee"><div>Delivery Fee</div><div>3,000₩</div></div>
+                        <div class="color">
+                            <div>Color</div>
+                            <select name="color" disabled><option value="White" selected>White</option></select></div>
+                        <div class="size">
+                            <div>Size</div>
+                            <div>
+                                <button id="small" type="button" type="button">S</button>
+                                <button id="medium" type="button" type="button">M</button>
+                                <button id="large" type="button" type="button">L</button>
+                                <button id="xlarge" type="button" type="button">XL</button>
+                                <input name="size" type="hidden" value="">
+                            </div>
+                        </div>
+                        <div class="quantity">
+                            <div>Quantity</div>
+                            <div>
+                                <button type="button" class="quantity_minus"><i class="fa-solid fa-minus"></i></button>
+                                <input type="text" name="quantity" value="1">
+                                <button type="button" class="quantity_plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <div>Total</div>
+                            <div>
+                                <input type="hidden" name="total" value="">
+                                <span id="total">150,000</span>₩
+                            </div>
+                        </div>
+                        <div class="product_button">
+                            <button type="button">Add Cart</button><button type="button">Buy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="toggle_move">
+                <div>
+                    <div id="move_reviews">Reviews</div>
+                    <div id="move_questions">Questions</div>
+                </div>
+            </div>
+            <div class="move_top"><i class="fa-solid fa-arrow-up"></i></div>
+            <!-- 리뷰 -->
+            <div id="reviews">
+                <!-- 리뷰신고 모달 -->
+                <div class="review_bg" style="display:none;"></div>
+                <div class="review_report" style="display:none;">
+                    <div class="report_modal">
+                        <div class="report_title"><div>리뷰신고</div><div><button id="review_x"><i class="fa-solid fa-xmark"></i></button></div></div>
+                        <div class="report_contents">
+                            <form action="" method="post">
+                                <div>
+                                    <input name="user_id" type="hidden" value="">
+                                    <input name="report_id" type="hidden" value="">
+                                    <div style="font-weight:bold;">신고사유</div>
+                                    <select name="reason" style="width: 100%;">
+                                        <option value="" style="display:none;" selected>사유를 선택하세요.</option>
+                                        <option value="부적절한 닉네임">부적절한 닉네임</option>
+                                        <option value="욕설">욕설</option>
+                                        <option value="부적절한 이미지 게시">부적절한 이미지</option>
+                                    </select>
+                                </div>
+                                <div style="margin:10px 0;">
+                                    <div style="font-weight:bold;">내용</div>
+                                    <textarea name="report_contents" placeholder="상세내용을 작성해주세요."></textarea>
+                                </div>
+                                <div class="report_button">
+                                    <button type="submit">신고</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="product_button">
-                        <button type="button">Add Cart</button><button type="button">Buy</button>
+                </div>
+                <!-- 리뷰 이미지 모달 -->
+                <div class="reviews_bg" style="display:none;"></div>
+                <div id="reviews_img" style="display:none;">
+                    <button id="review_img_x" type="button"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="img_modal">
+                        <img id="enlarge_img" src="img/best.jpg">
                     </div>
                 </div>
+                <div class="reviews_title">
+                    <div>Reviews</div>
+                    <div>
+                        <button type="button">Write</button>
+                    </div>
+                </div>
+                <div class="reviews_contents">
+                    <div class="reviews_each">
+                        <div class="review_top">
+                            <div class="id">asd123<input name='review_id' type="hidden" value="asd123"></div>
+                            <div class="reviews_tools"><div class="edit_del" style="font-size: 14px;"><a href="#">수정</a>|<a href="#">삭제</a></div><button style="display:none;" class="report_open_btn" type="button">신고하기</button></div>
+                        </div>
+                        <div class="review_middle" style="display:flex; align-items: center;">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div class="reviews_date">2024/01/01</div>
+                        </div>
+                        <div class="review_bottom">
+                            <div>
+                                <div class="review_img"><img class="each_img" src="img/best.jpg"></div>
+                                리뷰내용 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews_each">
+                        <div class="review_top"><div class="id">zxc123<input name='review_id' type="hidden" value="zxc123"></div><div class="reviews_tools"><button class="report_open_btn" type="button">신고하기</button></div></div>
+                        <div class="review_middle" style="display:flex; align-items: center;">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div class="reviews_date">2024/01/01</div>
+                        </div>
+                        <div class="review_bottom">
+                            <div>
+                                <div class="review_img"><img class="each_img" src="img/weekly.jpg"></div>
+                                리뷰내용 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews_each">
+                        <div class="review_top"><div class="id">qeqe111<input name='review_id' type="hidden" value="qeqe111"></div><div class="reviews_tools"><button class="report_open_btn" type="button">신고하기</button></div></div>
+                        <div class="review_middle" style="display:flex; align-items: center;">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div class="reviews_date">2024/01/01</div>
+                        </div>
+                        <div class="review_bottom">
+                            <div>
+                                <div class="review_img"><img class="each_img" src="img/main1.jpg"></div>
+                                리뷰내용 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews_each">
+                        <div class="review_top"><div class="id">asd123<input name='review_id' type="hidden" value="asd123"></div><div class="reviews_tools"><button class="report_open_btn" type="button">신고하기</button></div></div>
+                        <div class="review_middle" style="display:flex; align-items: center;">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div class="reviews_date">2024/01/01</div>
+                        </div>
+                        <div class="review_bottom">
+                            <div>
+                                리뷰내용 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews_each">
+                        <div class="review_top"><div class="id">qeqe111<input name='review_id' type="hidden" value="qeqe111"></div><div class="reviews_tools"><button class="report_open_btn" type="button">신고하기</button></div></div>
+                        <div class="review_middle" style="display:flex; align-items: center;">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div class="reviews_date">2024/01/01</div>
+                        </div>
+                        <div class="review_bottom">
+                            <div>
+                                <div class="review_img"><img class="each_img" src="img/men.jpg"></div>
+                                리뷰내용 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review_paging">
+                    <a href=""><i class="fa-solid fa-angle-left"></i></a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- 문의 -->
+            <div id="questions">
+                <!-- 상품문의 모달 -->
+                <div class="question_bg" style="display:none;"></div>
+                <div class="add_question" style="display:none;">
+                    <div class="question_modal">
+                        <div class="question_title"><div>상품문의</div><div><button id="question_x"><i class="fa-solid fa-xmark"></i></button></div></div>
+                        <div class="question_contents">
+                            <form action="" method="post">
+                                <input type="hidden" name="qeustion_id" value="">
+                                <div class="question_product_name">
+                                    <div style="font-weight:bold;">상품명<span style="font-weight:100; margin-left:5px;">상품명</span></div>
+                                </div>
+                                <div style="margin:10px 0;">
+                                    <div style="font-weight:bold;">내용</div>
+                                    <textarea name="question_contents" placeholder="문의사항을 작성해주세요."></textarea>
+                                </div>
+                                <div class="question_button">
+                                    <button type="submit">문의하기</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions_title">
+                    <div>Questions</div>
+                    <div>
+                        <button id="open_question" type="button">Write</button>
+                    </div>
+                </div>
+                <div class="questions_contents">
+                    <div class="questions_each">
+                        <div class="question_top">
+                            <span class="question_span">질문</span>asd123<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            질문내용
+                        </div>
+                    </div>
+                    <div class="answer_each">
+                        <div class="question_top">
+                            <span class="answer_span">답변</span>판매자<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            답변내용
+                        </div>
+                    </div>
+                    <div class="questions_each">
+                        <div class="question_top">
+                            <span class="question_span">질문</span>asd123<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            질문내용
+                        </div>
+                    </div>
+                    <div class="answer_each">
+                        <div class="question_top">
+                            <span class="answer_span">답변</span>판매자<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            답변내용
+                        </div>
+                    </div>
+                    <div class="questions_each">
+                        <div class="question_top">
+                            <span class="question_span">질문</span>asd123<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            질문내용
+                        </div>
+                    </div>
+                    <div class="answer_each">
+                        <div class="question_top">
+                            <span class="answer_span">답변</span>판매자<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            답변내용
+                        </div>
+                    </div>
+                    <div class="questions_each">
+                        <div class="question_top">
+                            <span class="question_span">질문</span>asd123<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            질문내용
+                        </div>
+                    </div>
+                    <div class="answer_each">
+                        <div class="question_top">
+                            <span class="answer_span">답변</span>판매자<div style="float: right; font-weight:100;">2024-01-01</div>
+                        </div>
+                        <div class="question_bottom">
+                            답변내용
+                        </div>
+                    </div>
+                </div>
+                <div class="question_paging">
+                    <a href=""><i class="fa-solid fa-angle-left"></i></a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
             </div>
         </div>
     </main>
@@ -221,6 +407,51 @@
         </div>
     </footer>
 </body>
+<script>
+    let quantity = document.getElementsByName('quantity');
+    const q_minus = document.querySelectorAll('.quantity_minus');
+    const q_plus = document.querySelectorAll('.quantity_plus');
+    const price = document.getElementsByName('price');
+    const total = document.querySelector('#total');
+    const tInput = document.getElementsByName('total');
+
+    for(let i=0; i<quantity.length; i++){
+        quantity[i].addEventListener('input',function(){
+        quantity[i].value = quantity[i].value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+
+        if(Number(quantity[i].value) > 100){
+            quantity[i].value = '100';
+        }
+        if(Number(quantity[i].value) <= 0){
+            quantity[i].value = '1';
+        }
+        totalPrice = price[0].value * quantity[0].value;
+        total.innerHTML = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    })
+
+    q_minus[i].addEventListener('click',function(){
+        let n_quantity = Number(quantity[i].value)-1;
+        if(n_quantity >= 1){
+            quantity[i].value = String(n_quantity);
+        }
+        totalPrice = price[0].value * quantity[0].value;
+        total.innerHTML = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    })
+
+    q_plus[i].addEventListener('click',function(){
+        let n_quantity = Number(quantity[i].value)+1;
+        if(n_quantity <= 100){
+            quantity[i].value = String(n_quantity);
+        }
+        totalPrice = price[0].value * quantity[0].value;
+        tInput[0].value = totalPrice;
+        total.innerHTML = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    })
+}
+</script>
+<script src="js/reviewNquestion.js"></script>
+<script src="js/sizeInsert.js"></script>
+<script src="js/scrollMove.js"></script>
 <script src="js/openSearch.js"></script>
 <script src="js/fixedMenu.js"></script>
 </html>

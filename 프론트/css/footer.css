@@ -16,10 +16,6 @@ footer{
     display:inline-block;
     margin-right:10px;
 }
-.Info{
-    color:#dddddd;
-    font-weight:bold;
-}
 .Info span{
     padding-right:15px;
 }
@@ -32,7 +28,6 @@ footer{
     margin-right:15px;
 }
 .shopInfo p{
-    color:#dddddd;
     padding:15px 0 20px;
     font-size:14px;
     font-weight:bold;

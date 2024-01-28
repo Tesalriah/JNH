@@ -7,132 +7,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart.css">
     <title>J&H</title>
 </head>
-<style>
-.container > form{
-    width:90%;
-    margin:0 auto;
-}
-.title{
-    font-size:35px;
-    font-weight:bold;
-    color: #FFAEC9;
-}
-.title > div{
-    margin:75px auto;
-    width:160px;
-}
-button,input[type="submit"]{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-.list_option{
-    font-size:14px;
-    padding:5px;
-    border-top:1px solid #dddddd;
-    border-bottom:1px solid #dddddd;
-    background-color:#eeeeee;
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-}
-button[type="submit"]:hover{
-    cursor: pointer;
-    background-color:#DC98AF;
-}
-button[type="submit"]{
-    border:1px solid #FFAEC9;
-    color:#ffffff;
-    background-color:#FFAEC9;
-    border-radius: 2px;
-    padding:5px 10px;
-    width:113px;
-}
-.wish_list li{
-    display:flex;
-    justify-content: space-between;
-    padding:10px 5px;
-    align-items:center;
-    border-bottom:1px solid #dddddd;
-}
-.img_href{
-    margin-left:10px;
-}
-.img_href img{
-    width:150px;
-    height:150px;
-}
-.product_info{
-    width:50%;
-    font-size:15px;
-    font-weight:bold;
-}
-.list_button button:hover{
-    cursor:pointer;
-}
-.list_button button{
-    width:113px;
-    height:30px;
-    font-size:12px;
-    color:#FFAEC9;
-    background-color:#ffffff;
-    border:1px solid #FFAEC9;
-    border-radius:2px;
-}
-.quantity{
-    width:30px;
-    text-align:center;
-}
-.quantity_minus, .quantity_plus{
-    background-color: #FFAEC9;
-    color:#fff;
-}
-.quantity_minus:hover, .quantity_plus:hover{
-    cursor: pointer;
-}
-.paging{
-    text-align:center;
-    margin-top:50px;
-}
-.paging a:hover{
-    font-weight:bold;
-}
-.paging a{
-    padding:5px;
-}
-.end_list{
-    background-color:#eeeeee;
-    border-bottom:1px solid #dddddd;
-}
-.end_list > div {
-    text-align:right;
-    padding:30px;
-    font-size:18px;
-}
-.end_button_area{
-    margin-bottom:100px;
-}
-.end_button_area > div{
-    margin:0 auto;
-    width:270px;
-    margin-top:30px;
-    text-align: center;
-}
-.end_button{
-    font-size:20px;
-    padding:15px;
-    background-color:#FFAEC9;
-    color:#fff;
-    border-radius:5px;
-}
-.end_button:hover{
-    cursor:pointer;
-    background-color:#DC98AF;
-}
-
-</style>
 <body>
     <header>
         <div class="header_area">
@@ -209,11 +86,11 @@ button[type="submit"]{
                             <a class="img_href" href="#"><img src="product_4.jpg"></a>
                         </div>
                         <div class="product_info">
-                            상품명<input type="hidden" name="product_name" value=""><br><br>
+                            <a href="#">상품명</a><input type="hidden" name="product_name" value=""><br><br>
                             0원<input type="hidden" name="price" value="0">
                         </div>
                         <div style="width:15%; text-align:center;">
-                            <button type="button" class="quantity_minus">-</button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus">+</button>
+                            <button type="button" class="quantity_minus"><i class="fa-solid fa-minus"></i></button><input class="quantity" type="text" name="quantity" value="1"><button type="button" class="quantity_plus"><i class="fa-solid fa-plus"></i></button>
                         </div>
                         <div class="list_button">
                             <button>삭제</button>
