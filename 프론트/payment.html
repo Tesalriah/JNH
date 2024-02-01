@@ -7,38 +7,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/payment.css">
     <title>J&H</title>
 </head>
-<style>
-    .container{
-        padding:30px;
-        width: 100%;
-    }
-    .payment{
-        border-radius:15px;
-        margin:0 auto;
-        padding:30px;
-        width:90%;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    }
-    .title{
-        font-size:28px;
-        font-weight: bold;
-        border-bottom: 1px solid #555555;
-        padding:0 20px 20px 20px;
-    }
-    .subheading{
-        padding:20px;
-        font-size:20px;
-    }
-    .payment td{
-        padding: 15px;
-        text-align: center;
-    }
-    .payment table tr:first-child{
-        border-top:1px solid black;
-    }
-</style>
 <body>
     <header>
         <div class="header_area">
@@ -94,74 +65,168 @@
     </header>
     <main>
         <div class="container">
-            <div class="payment">
-                <div class="title">주문 / 결제</div>
-                <div class="subheading">구매자 정보</div>
-                <table border="1">
-                    <tr>
-                        <td>이름</td>
-                        <td>홍길동</td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>hong12@naver.com</td>
-                    </tr>
-                    <tr>
-                        <td>휴대폰 번호</td>
-                        <td>010-0000-0000</td>
-                    </tr>
-                </table>
-                <div class="subheading">받는사람 정보</div>
-                <table>
-                    <tr>
-                        <td>이름</td>
-                        <td><input name="name" type="text" value="홍길동"></td>
-                    </tr>
-                    <tr>
-                        <td>배송주소</td>
-                        <td><input name="adress" type="text" value="서울시 노원구 OO아파트 000호"></td>
-                    </tr>
-                    <tr>
-                        <td>연락처</td>
-                        <td><input name="adress" type="text" value="010-0000-0000"></td>
-                    </tr>
-                    <tr>
-                        <td>배송 요청사항</td>
-                        <td>
-                            <select name="delivery_req">
-                                <option value="" selected style="display: none;">배송요청사항 선택</option>
-                                <option value="문앞에 두고가주세요">문앞에 두고가주세요</option>
-                                <option value="경비실에 맡겨주세요">경비실에 맡겨주세요</option>
-                                <option value="배송시 연락주세요">배송시 연락주세요</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td>총 상품가격</td>
-                        <td>150,000</td>
-                    </tr>
-                    <tr>
-                        <td>배송비</td>
-                        <td>3,000
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>총결재금액</td>
-                        <td>153,000</td>
-                    </tr>
-                    <tr>
-                        <td>결제방법</td>
-                        <td>
-                            <input name="method" type="radio" id="account"><label for="account">계좌이체</label>
-                            <input name="method" type="radio" id="card"><label for="card">신용/체크카드</label>
-                            <input name="method" type="radio" id="phone"><label for="phone">휴대폰</label>
-                            <input name="method" type="radio" id="bank"><label for="bank">무통장입금(가상계좌)</label>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            <form action="" method="post">
+                <div class="payment">
+                    <div class="title">주문 / 결제</div>
+                    <div class="subheading">구매자 정보</div>
+                    <table>
+                        <tr>
+                            <td>이름</td>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td>hong12@naver.com</td>
+                        </tr>
+                        <tr>
+                            <td>휴대폰 번호</td>
+                            <td>010-0000-0000</td>
+                        </tr>
+                    </table>
+                    <div class="subheading" style="margin-top:25px;">받는사람 정보</div>
+                    <table>
+                        <tr>
+                            <td>이름</td>
+                            <td><input name="name" type="text" value="홍길동"></td>
+                        </tr>
+                        <tr>
+                            <td>배송주소</td>
+                            <td><input name="address" type="text" value="서울시 노원구 OO아파트 000호" readonly><button id="find_address" type="button">주소찾기</button></td>
+                        </tr>
+                        <tr>
+                            <td>연락처</td>
+                            <td><input name="phone" type="text" value="01000000000" placeholder="- 구문없이 입력해주세요"></td>
+                        </tr>
+                        <tr>
+                            <td>배송 요청사항</td>
+                            <td>
+                                <select name="delivery_req">
+                                    <option value="" selected style="display: none;">배송요청사항 선택</option>
+                                    <option value="문앞에 두고가주세요">문앞에 두고가주세요</option>
+                                    <option value="경비실에 맡겨주세요">경비실에 맡겨주세요</option>
+                                    <option value="배송시 연락주세요">배송시 연락주세요</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="subheading" style="margin-top:25px;">구매목록</div>
+                    <div class="product">
+                        <div class="product_each">
+                            <div><span>옥스포드 셔츠</span>/<span>Blue</span>/<span>XL</span>/<span>1개</span></div>
+                            <div><span>라이더 자켓</span>/<span>Black</span>/<span>L</span>/<span>1개</span></div>
+                            <div><span>와이드 팬츠</span>/<span>Pink</span>/<span>XL</span>/<span>1개</span></div>
+                            <div style="border: none;"><span>옥스포드 셔츠</span>/<span>Black</span>/<span>XL</span>/<span>1개</span></div>
+                        </div>
+                    </div>
+                    <table style="margin-top:85px;">
+                        <tr>
+                            <td>총 상품가격</td>
+                            <td>150,000</td>
+                        </tr>
+                        <tr>
+                            <td>배송비</td>
+                            <td>3,000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>총결재금액</td>
+                            <td>153,000</td>
+                        </tr>
+                        <!-- <tr>
+                            <td>결제방법</td>
+                            <td class="payment_method">
+                                <div>
+                                    <div>
+                                        <input name="method" type="radio" id="account"><label for="account">계좌이체</label>
+                                    </div>
+                                    <div>
+                                        <input name="method" type="radio" id="card"><label for="card">신용/체크카드</label>
+                                    </div>
+                                    <div>
+                                        <input name="method" type="radio" id="phone"><label for="phone">휴대폰</label>
+                                    </div>
+                                    <div>
+                                        <input name="method" type="radio" id="bank"><label for="bank">무통장입금(가상계좌)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="account">
+                                        <div>은행선택</div>
+                                        <div>
+                                            <select name="bank" >
+                                                <option value="" selected style="display:none;">선택</option>
+                                                <option value="카카오뱅크">카카오뱅크</option>
+                                                <option value="기업은형">기업은행</option>
+                                                <option value="국민은형">국민은행</option>
+                                                <option value="농협은형">농협은행</option>
+                                                <option value="하나은형">하나은행</option>
+                                                <option value="신한은형">신한은행</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="flex-wrap:wrap;">
+                                        <div>카드선택</div>
+                                        <div style="width: 90%;">
+                                            <select name="card" >
+                                                <option value="" selected style="display:none;">선택</option>
+                                                <option value="카카오뱅크">카카오뱅크카드</option>
+                                                <option value="기업은형">BC카드</option>
+                                                <option value="국민은형">국민카드</option>
+                                                <option value="농협은형">농협카드</option>
+                                                <option value="하나은형">하나카드</option>
+                                                <option value="신한은형">신한카드</option>
+                                            </select>
+                                        </div>
+                                        <div style="width: 100%;"><hr></div>
+                                        <div>
+                                            할부기간
+                                        </div>
+                                        <div>
+                                            <select name="installment">
+                                                <option value="일시불" selected>일시불</option>
+                                                <option value="1개월">1개월</option>
+                                                <option value="2개월">2개월</option>
+                                                <option value="3개월">3개월</option>
+                                                <option value="4개월">4개월</option>
+                                                <option value="5개월">5개월</option>
+                                                <option value="6개월">6개월</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="phone">
+                                        <div>통신사종류</div>
+                                        <div>
+                                            <select name="agency" >
+                                                <option value="" selected style="display:none;">선택</option>
+                                                <option value="SKT">SKT</option>
+                                                <option value="KT">KT</option>
+                                                <option value="헬로모바일">헬로모바일</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="transfer">
+                                        <div>입금은행</div>
+                                        <div>
+                                            <select name="bank" >
+                                                <option value="" selected style="display:none;">선택</option>
+                                                <option value="카카오뱅크">카카오뱅크</option>
+                                                <option value="기업은형">기업은행</option>
+                                                <option value="국민은형">국민은행</option>
+                                                <option value="농협은형">농협은행</option>
+                                                <option value="하나은형">하나은행</option>
+                                                <option value="신한은형">신한은행</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr> -->
+                    </table>
+                    <div class="payment_btn">
+                        <button type="button">결제하기</button><button type="button">취소</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
     <footer>
