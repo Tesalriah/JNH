@@ -68,3 +68,20 @@ del{
     color:#cccccc;
     font-size:14px;
 }
+@media(max-width:1500px){
+    .paging{
+        margin-top: 50px;
+    }
+}
+.paging{
+    text-align:center;
+    font-size: 18px;
+    font-weight:bold;
+    margin-bottom: 200px;
+}
+.paging a{
+    padding:10px;
+}
+.paging a:hover{
+    color:#FFAEC9;
+}
