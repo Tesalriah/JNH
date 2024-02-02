@@ -8,59 +8,9 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sideMenu.css">
+    <link rel="stylesheet" href="css/returnStep1.css">
     <title>J&H</title>
 </head>
-<style>
-    .return{
-        border:1px solid #dddddd;
-        margin-top:25px;
-        font-size: 18px;
-    }
-    .return_top{
-        display: flex;
-        border-bottom:1px solid #dddddd;
-        background-color:#f5f5f5;
-        padding:15px 10px;
-    }
-    .return_top div{
-        width: 30%;
-    }
-    .return_bottom{
-        display: flex;
-        align-items: center;
-    }
-    .return_bottom > div{
-        min-height: 180px;
-    }
-    .product_name, .info, .status{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .product_name{
-        width:70%;
-        border-right: 1px solid #dddddd;
-    }
-    .product_name div{
-        min-height: 36px;
-        display: flex;
-        align-items: center;
-        padding:3px 10px;
-    }
-    .info{
-        width:15%;
-        text-align: center;
-        border-right: 1px solid #dddddd;
-    }
-    .info div{
-        padding:1px;
-    }
-    .status{
-        display: flex;
-        width:15%;
-        text-align: center;
-    }
-</style>
 <body>
     <header>
         <div class="header_area">
@@ -137,67 +87,31 @@
                     <div><a href="">문의내역확인</a></div>
                 </div>
                 <div class="contents">
-                    <h2>취소/반품/교환 내역</h2>
-                    <div class="return_list">
-                        <div class="return">
-                            <div class="return_top">
-                                <div>취소접수일 : 2024/01/01</div>
-                                <div>주문일 : 2024/01/01</div>
-                            </div>
-                            <div class="return_bottom">
-                                <div class="product_name">
-                                    <div>
-                                        상품명
-                                    </div>
-                                    <div>
-                                        상품명
-                                    </div>
-                                    <div>
-                                        상품명
-                                    </div>
-                                    <div>
-                                        상품명
-                                    </div>
-                                    <div>
-                                        상품명
-                                    </div>
-                                    <div>
-                                        상품명
-                                    </div>
+                    <h2>교환, 반품 신청</h2>
+                    <div class="outside">
+                        <form action="" method="post">
+                            <div class="subheading">상품을 선택해 주세요</div>
+                            <div class="return_product_list">
+                                <div class="return_product">
+                                    <div><input type="checkbox" name=""></div>
+                                    <div><img src="img/weekly.jpg"></div>
+                                    <div>상품명 / 색상 / 사이즈</div>
                                 </div>
-                                <div class="info">
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
+                                <div class="return_product">
+                                    <div><input type="checkbox" name=""></div>
+                                    <div><img src="img/best.jpg"></div>
+                                    <div>상품명 / 색상 / 사이즈</div>
                                 </div>
-                                <div class="status">
-                                    <div>   
-                                        취소완료
-                                    </div>
+                                <div class="return_product">
+                                    <div><input type="checkbox" name=""></div>
+                                    <div><img src="img/best.jpg"></div>
+                                    <div>상품명 / 색상 / 사이즈</div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="next_button">
+                                <button type="submit">다음단계 <i class="fa-solid fa-angle-right"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
