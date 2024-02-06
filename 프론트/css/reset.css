@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 /* reset.css */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,8 +54,8 @@ input, button{
 input:focus{
     outline:none;
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 main{
+    background-color: #ffffff;
     font-family: 'Noto Sans KR', sans-serif;
     margin:0 auto;
     max-width:1920px;
@@ -64,6 +65,6 @@ main{
 input, textarea, select, button{
     font-family: 'Noto Sans KR', sans-serif;
 }
-select:focus{
+select:focus, textarea:focus{
     outline: none;
 }

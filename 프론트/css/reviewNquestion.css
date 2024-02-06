@@ -30,6 +30,7 @@
     z-index:999;
 }
 #review_img_x{
+    display: flex;
     position:fixed;
     right:4%;
     top:5%;
@@ -37,7 +38,7 @@
     color:#ffffff;
     font-size: 32px;
     border-radius:50%;
-    padding:5px 11px;
+    padding:5px 9px;
     z-index:999;
 }
 #review_img_x:hover{
