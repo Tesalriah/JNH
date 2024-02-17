@@ -6,7 +6,6 @@ for(let i=0; i<qestionDiv.length; i++){
         answerDiv[i].classList.toggle('answer_display');
         for(let j=0; j<answerDiv.length; j++){
             if(answerDiv[i] != answerDiv[j]){
-                console.log('asd');
                 answerDiv[j].classList.remove('answer_display');
             }
         }
