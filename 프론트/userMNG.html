@@ -8,36 +8,9 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sideMenu.css">
+    <link rel="stylesheet" href="css/userMNG.css">
     <title>J&H</title>
 </head>
-<style>
-    .user_MNG{
-        margin-top: 25px;
-        min-height:200px;
-    }
-    @media(max-width:1826px){
-        .user_MNG{
-            overflow-x: scroll;
-        }
-        .user_table{
-            width:1400px;
-        }
-    }
-    @media(min-width:1826px){
-        .user_table{
-            width:100%;
-        }
-    }
-    .user_table{
-        text-align: center;
-    }
-    .user_table tr:first-child{
-        background-color: #f5f5f5;
-    }
-    .user_table td{
-        padding:10px;
-    }
-</style>
 <body>
     <header>
         <div class="header_area">
@@ -95,7 +68,7 @@
         <div class="container">
             <div class="title">
                 <div class="image">
-                    <img src="img/admin.png" style="">
+                    <img src="img/admin.png">
                 </div>
                 <div style="font-family: 'Raleway', sans-serif;">Admin Page</div>
             </div>
@@ -116,32 +89,242 @@
                             <tr>
                                 <td style="width:5%;">등급</td>
                                 <td style="width:10%;">아이디</td>
-                                <td style="width:5%;">이름</td>
+                                <td style="width:8%;">이름</td>
                                 <td style="width:15%;">메일</td>
                                 <td style="width:10%;">휴대폰번호</td>
                                 <td style="width:5%;">주소</td>
                                 <td style="width:5%;">성별</td>
                                 <td style="width:10%;">생년월일</td>
                                 <td style="width:5%;">상태</td>
-                                <td style="width:5%;">계정정지</td>
+                                <td style="width:7%;">계정정지</td>
                                 <td style="width:10%;">가입일</td>
-                                <td style="width:15%;">누적신고수</td>
+                                <td style="width:10%;">누적신고수</td>
                             </tr>
                             <tr>
-                                <td style="width:5%;">구매자</td>
-                                <td style="width:10%;">asd123</td>
-                                <td style="width:10%;">홍길동</td>
-                                <td style="width:10%;">hong12@gmail.com</td>
-                                <td style="width:10%;">010-0000-0000</td>
-                                <td style="width:5%;"><span>bind</span></td>
-                                <td style="width:5%;">남자</td>
-                                <td style="width:10%;">1998-01-01</td>
-                                <td style="width:5%;"><span>정상</span></td>
-                                <td style="width:10%;"><button type="button">정지</button></td>
-                                <td style="width:10%;">2024-01-01</td>
-                                <td style="width:10%;">0</td>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>zxc123</td>
+                                <td>김유신</td>
+                                <td>rladbtls12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1996-01-01</td>
+                                <td><span style="color:red">정지</span></td>
+                                <td><button type="button" class="user_release">해제</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>구매자</td>
+                                <td>asd123</td>
+                                <td>홍길동</td>
+                                <td>hong12@gmail.com</td>
+                                <td>010-0000-0000</td>
+                                <td><button type="button" class="adress_blind">blind</button></td>
+                                <td>남자</td>
+                                <td>1998-01-01</td>
+                                <td><span style="color:lightgreen">정상</span></td>
+                                <td><button type="button" class="user_suspension">정지</button></td>
+                                <td>2024-01-01</td>
+                                <td>0</td>
                             </tr>
                         </table>
+                    </div>
+                    <div class="paging">
+                        <a href=""><i class="fa-solid fa-angle-left"></i></a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <a href="">4</a>
+                        <a href="">5</a>
+                        <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="search_user">
+                        <form action="" method="post">
+                            <input type="text" name="user_id" placeholder="아이디를 입력해주세요"><button type="submit">검색</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -184,7 +367,6 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript" src="js/productMNG.js"></script>
 <script type="text/javascript" src="js/openSearch.js"></script>
 <script type="text/javascript" src="js/fixedMenu.js"></script>
 </html>

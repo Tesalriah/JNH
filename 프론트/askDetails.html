@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sideMenu.css">
     <link rel="stylesheet" href="css/asking.css">
+    <link rel="stylesheet" href="css/askDetails.css">
     <title>J&H</title>
 </head>
 <body>
@@ -68,42 +69,37 @@
         <div class="container">
             <div class="title">
                 <div class="image">
-                    <img src="img/house.jpg">
+                    <img src="img/admin.png">
                 </div>
-                <div style="font-family: 'Raleway', sans-serif;">Mypage</div>
+                <div style="font-family: 'Raleway', sans-serif;">Admin Page</div>
             </div>
             <div class="nav">
                 <div class="left_menu">
-                    <div><a href="orderList.html">주문목록</a></div>
-                    <div><a href="">취소/반품/교환</a></div>
-                    <div><a href="">찜리스트</a></div>
-                    <br>
-                    <div><a href="">개인정보 확인/수정</a></div>
-                    <div><a href="">신고내역확인</a></div>
-                    <br>
+                    <div><a href="">상품관리</a></div>
+                    <div><a href="">유저관리</a></div>
+                    <div><a href="">신고관리</a></div>
+                    <div><a href="">문의관리</a></div>
+                    <div><a href="">취소/반품/교환관리</a></div>
+                    <div><a href="">주문관리</a></div>
                     <div><a href="">리뷰관리</a></div>
-                    <br>
-                    <div><a href="">문의하기</a></div>
-                    <div><a href="">문의내역확인</a></div>
                 </div>
                 <div class="contents">
-                    <h2>문의</h2>
+                    <h2>문의관리</h2>
                     <div class="post_box">
-                        <div class="post_button"><button type="button">목록</button></div>
+                        <div class="post_button"><button type="button">이전글</button><button type="button">다음글</button><button type="button">목록</button></div>
                         <div class="ask_post">
                             <div class="ask_title">
                                 <div><span>Q</span><span>문의합니다</span></div>
                                 <div>
                                     <div>asd123</div>
-                                    <div>2024-01-01</div>
+                                    <div>2024-01-01<br>00:00</div>
                                 </div>
                             </div>
                             <div class="ask_contents">
                                 문의내용
                             </div>
                         </div>
-                        <div class="post_button" style="margin-top: 15px;"><button type="button">수정</button><button type="button">삭제</button></div>
-                        <div class="ask_post">
+                        <div class="ask_post" style="margin-top: 20px;">
                             <div class="ask_title">
                                 <div><span>A</span><span>관리자 답변</span></div>
                                 <div>
@@ -115,29 +111,35 @@
                                 답변내용
                             </div>
                         </div>
+                        <div class="answer_write">
+                            <h2>답변작성</h2>
+                            <div class="write_flex">
+                                <textarea name="report_answer" rows="5" placeholder="답변작성"></textarea><button type="button">등록</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="list_box">
                         <h2>전체글</h2>
                         <div class="post_list">
                             <div class="post_each">
                                 <div><a href="">문의합니다.</a></div>
-                                <div>2024-01-01 00:00</div>
+                                <div class="id_date"><div>red121</div><div>2024-01-01 00:00</div></div>
                             </div>
                             <div class="post_each">
                                 <div><a href="">문의합니다.</a></div>
-                                <div>2024-01-01 00:00</div>
+                                <div class="id_date"><div>asd123</div><div>2024-01-01 00:00</div></div>
                             </div>
                             <div class="post_each" style="background-color: #f5f5f5;">
                                 <div><a href="">문의합니다.</a></div>
-                                <div>2024-01-01 00:00</div>
+                                <div class="id_date"><div>asd123</div><div>2024-01-01 00:00</div></div>
                             </div>
                             <div class="post_each">
                                 <div><a href="">문의합니다.</a></div>
-                                <div>2024-01-01 00:00</div>
+                                <div class="id_date"><div>zxc123</div><div>2024-01-01 00:00</div></div>
                             </div>
                             <div class="post_each">
                                 <div><a href="">문의합니다.</a></div>
-                                <div>2024-01-01 00:00</div>
+                                <div class="id_date"><div>abc123</div><div>2024-01-01 00:00</div></div>
                             </div>
                         </div>
                     </div>
@@ -183,6 +185,6 @@
         </div>
     </footer>
 </body>
-<script src="js/openSearch.js"></script>
-<script src="js/fixedMenu.js"></script>
+<script type="text/javascript" src="js/openSearch.js"></script>
+<script type="text/javascript" src="js/fixedMenu.js"></script>
 </html>
