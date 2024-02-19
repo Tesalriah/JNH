@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sideMenu.css">
-    <link rel="stylesheet" href="css/asking.css">
-    <link rel="stylesheet" href="css/askDetails.css">
+    <link rel="stylesheet" href="css/noticeWrite.css">
     <title>J&H</title>
 </head>
 <body>
@@ -69,80 +68,39 @@
         <div class="container">
             <div class="title">
                 <div class="image">
-                    <img src="img/admin.png">
+                    <img src="img/book.jpg">
                 </div>
-                <div style="font-family: 'Raleway', sans-serif;">Admin Page</div>
+                <div style="font-family: 'Raleway', sans-serif;">Notice</div>
             </div>
             <div class="nav">
                 <div class="left_menu">
-                    <div><a href="">상품관리</a></div>
-                    <div><a href="">유저관리</a></div>
-                    <div><a href="">신고관리</a></div>
-                    <div><a href="">문의관리</a></div>
-                    <div><a href="">취소/반품/교환관리</a></div>
-                    <div><a href="">주문관리</a></div>
-                    <div><a href="">리뷰관리</a></div>
+                    <div><a href="">공지사항</a></div>
+                    <div><a href="">이벤트</a></div>
+                    <div><a href="">FAQ</a></div>
                 </div>
                 <div class="contents">
-                    <div class="post_box">
-                        <div class="post_button"><button type="button">이전글</button><button type="button">다음글</button><button type="button">목록</button></div>
-                        <div class="ask_post">
-                            <div class="ask_title">
-                                <div><span>Q</span><span>문의합니다</span></div>
-                                <div>
-                                    <div>asd123</div>
-                                    <div>2024-01-01<br>00:00</div>
-                                </div>
+                    <h2>게시글 작성</h2>
+                    <div class="notice_write">
+                        <form action="" method="post">
+                            <div class="mustread">
+                                <input type="checkbox" id="mustread" name="mustread"><label for="mustread">필독</label>
                             </div>
-                            <div class="ask_contents">
-                                문의내용
+                            <div class="title">
+                                <select name="category">
+                                    <option value="" style="display: none; color:#dddddd;" selected>게시판 선택</option>
+                                    <option value="notice">공지사항</option>
+                                    <option value="event">이벤트</option>
+                                </select>
+                                <input type="text" name="title" placeholder="제목을 입력하세요">
                             </div>
-                        </div>
-                        <div class="ask_post" style="margin-top: 20px;">
-                            <div class="ask_title">
-                                <div><span>A</span><span>관리자 답변</span></div>
-                                <div>
-                                    <div>관리자</div>
-                                    <div>2024-01-01</div>
-                                </div>
+                            <div class="notice_contents">
+                                <textarea name="contents" placeholder="내용을 입력하세요" rows="15"></textarea>
                             </div>
-                            <div class="ask_contents">
-                                답변내용
+                            <div class="notice_button">
+                                <button type="submit">등록</button><button type="button">취소</button>
                             </div>
-                        </div>
-                        <div class="answer_write">
-                            <h2>답변작성</h2>
-                            <div class="write_flex">
-                                <textarea name="report_answer" rows="5" placeholder="답변작성"></textarea><button type="button">등록</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-                    <div class="list_box">
-                        <h2>전체글</h2>
-                        <div class="post_list">
-                            <div class="post_each">
-                                <div><a href="">문의합니다.</a></div>
-                                <div class="id_date"><div>red121</div><div>2024-01-01 00:00</div></div>
-                            </div>
-                            <div class="post_each">
-                                <div><a href="">문의합니다.</a></div>
-                                <div class="id_date"><div>asd123</div><div>2024-01-01 00:00</div></div>
-                            </div>
-                            <div class="post_each" style="background-color: #f5f5f5;">
-                                <div><a href="">문의합니다.</a></div>
-                                <div class="id_date"><div>asd123</div><div>2024-01-01 00:00</div></div>
-                            </div>
-                            <div class="post_each">
-                                <div><a href="">문의합니다.</a></div>
-                                <div class="id_date"><div>zxc123</div><div>2024-01-01 00:00</div></div>
-                            </div>
-                            <div class="post_each">
-                                <div><a href="">문의합니다.</a></div>
-                                <div class="id_date"><div>abc123</div><div>2024-01-01 00:00</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post_button"><button type="button">목록</button></div>
                 </div>
             </div>
         </div>
@@ -184,6 +142,6 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript" src="js/openSearch.js"></script>
-<script type="text/javascript" src="js/fixedMenu.js"></script>
+<script src="js/openSearch.js"></script>
+<script src="js/fixedMenu.js"></script>
 </html>

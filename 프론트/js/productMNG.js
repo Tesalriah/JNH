@@ -1,8 +1,8 @@
 const productPrice = document.getElementsByName('product_price');
 const productDiscount = document.getElementsByName('product_discount');
-const productQuantity = document.getElementsByName('product_quantity');
+const productStock = document.getElementsByName('product_stock');
 let savePrevPrice = null;
-let savePrevQuantity = null;
+let savePrevstocktity = null;
 let savePrevDiscount = null;
 
 
@@ -20,10 +20,10 @@ for(let i=0; i<productDiscount.length; i++){
     })
 }
 
-for(let i=0; i<productQuantity.length; i++){
-    productQuantity[i].addEventListener('input',function(){
-        Qlimit(productQuantity[i]);
-        savePrevQuantity = productQuantity[i].value;
+for(let i=0; i<productStock.length; i++){
+    productStock[i].addEventListener('input',function(){
+        Slimit(productStock[i]);
+        savePrevstocktity = productStock[i].value;
     })
 }
 // 가격, 문자제한
@@ -78,18 +78,18 @@ function set100(set){
     }
 }
 
-//수량, 문자제한
-function Qlimit(quan){
-    if(quan.value > 99999){
+//재고수량, 문자제한
+function Slimit(stock){
+    if(stock.value > 99999){
         alert('재고수량은 99999를 초과 할 수 없습니다.')
-        quan.value = savePrevQuantity;
+        stock.value = savePrevstocktity;
         return false;
     }
 
-    let isval = Number(quan.value);
+    let isval = Number(stock.value);
     if(isNaN(isval)){
-        quan.value = savePrevQuantity;
+        stock.value = savePrevstocktity;
     }else{
-        quan.value = isval;
+        stock.value = isval;
     }
 }

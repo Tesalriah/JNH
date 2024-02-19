@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sideMenu.css">
-    <link rel="stylesheet" href="css/returnMNG.css">
+    <link rel="stylesheet" href="css/orderMNG.css">
     <title>J&H</title>
 </head>
 <body>
@@ -83,27 +83,19 @@
                     <div><a href="">리뷰관리</a></div>
                 </div>
                 <div class="contents">
-                    <h2>취소/반품/교환 관리</h2>
-                    <div class="return_MNG">
+                    <h2>주문 관리</h2>
+                    <div class="order_MNG">
                         <div class="status_menu">
                             <div>
-                                <a href="">반품접수</a>
+                                <a href="">결제완료</a>
                                 <a href="">0</a>
                             </div>
                             <div>
-                                <a href="">반품완료</a>
+                                <a href="">배송중</a>
                                 <a href="">0</a>
                             </div>
                             <div>
-                                <a href="">교환접수</a>
-                                <a href="">0</a>
-                            </div>
-                            <div>
-                                <a href="">교환완료</a>
-                                <a href="">0</a>
-                            </div>
-                            <div>
-                                <a href="">취소완료</a>
+                                <a href="">배송완료</a>
                                 <a href="">0</a>
                             </div>
                         </div>
@@ -117,188 +109,213 @@
                         </div>
                         <form method="post">
                             <div class="checked_tools">
-                                <button type="submit">반품</button>
-                                <button type="submit">교환</button>
-                                <button type="submit">취소</button>
+                                <button type="submit">상품배송</button>
                             </div>
                             <div class="table_box">
-                                <table class="return_table" border="1">
+                                <table class="order_table" border="1">
                                     <tr>
-                                        <td style="width:1%;"><input type="checkbox" name="check_all"></td>
-                                        <td style="width:10%">주문번호</td>
-                                        <td style="width:12%">상품명</td>
-                                        <td style="width:10%">색상/사이즈</td>
-                                        <td style="width:8%">수량</td>
-                                        <td style="width:10%">주문자명</td>
-                                        <td style="width:10%">연락처</td>
-                                        <td style="width:10%">주문일시</td>
-                                        <td style="width:10%">사유/내용</td>
-                                        <td style="width:10%">상태</td>
-                                        <td style="width:10%">변경사이즈</td>
+                                        <td style="width:10px;"><input type="checkbox" name="check_all"></td>
+                                        <td style="width:10%;">주문번호</td>
+                                        <td style="width:10%;">상품명</td>
+                                        <td style="width:10%;">색상/사이즈</td>
+                                        <td style="width:5%;">수량</td>
+                                        <td style="width:8%">주문자명</td>
+                                        <td style="width:25%;">주소</td>
+                                        <td style="width:10%;">연락처</td>
+                                        <td style="width:15%;">주문일시</td>
+                                        <td style="width:7%;">상태</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010001<input type="hidden" value="202401010001"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td>
-                                            <input name="reason" type="hidden" value="상품이 마음에 들지 않음1">
-                                            <input name="content" type="hidden" value="반품하고싶어요1">
-                                            <button type="button" class="contents_open_button">Open</button>
-                                        </td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010002<input type="hidden" value="202401010002"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
-                                        <td class="asdasd">010-0000-0000</td>
-                                        <td>2024-01-01 00:00</td>
-                                        <td>
-                                            <input name="reason" type="hidden" value="상품이 마음에 들지 않음2">
-                                            <input name="content" type="hidden" value="반품하고싶어요2">
-                                            <button type="button" class="contents_open_button">Open</button>
-                                        </td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010003<input type="hidden" value="202401010003"></td>
-                                        <td>와이드슬랙스</td>
-                                        <td>Black / XL</td>
-                                        <td>1</td>
-                                        <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010004<input type="hidden" value="202401010004"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010005<input type="hidden" value="202401010005"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010006<input type="hidden" value="202401010006"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010007<input type="hidden" value="202401010007"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010008<input type="hidden" value="202401010008"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010009<input type="hidden" value="202401010009"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010010<input type="hidden" value="202401010010"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010001<input type="hidden" value="202401010001"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="check_each"></td>
-                                        <td>202401010002<input type="hidden" value="202401010002"></td>
+                                        <td>202401010001</td>
                                         <td>와이드슬랙스</td>
                                         <td>Black / XL</td>
                                         <td>1</td>
                                         <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
                                         <td>010-0000-0000</td>
                                         <td>2024-01-01 00:00</td>
-                                        <td><button type="button" class="contents_open_button">Open</button></td>
-                                        <td>반품접수</td>
-                                        <td>L</td>
+                                        <td>결제완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="check_each"></td>
+                                        <td>202401010001</td>
+                                        <td>와이드슬랙스</td>
+                                        <td>Black / XL</td>
+                                        <td>1</td>
+                                        <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
+                                        <td>010-0000-0000</td>
+                                        <td>2024-01-01 00:00</td>
+                                        <td>결제완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="check_each"></td>
+                                        <td>202401010001</td>
+                                        <td>와이드슬랙스</td>
+                                        <td>Black / XL</td>
+                                        <td>1</td>
+                                        <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
+                                        <td>010-0000-0000</td>
+                                        <td>2024-01-01 00:00</td>
+                                        <td>결제완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="check_each"></td>
+                                        <td>202401010001</td>
+                                        <td>와이드슬랙스</td>
+                                        <td>Black / XL</td>
+                                        <td>1</td>
+                                        <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
+                                        <td>010-0000-0000</td>
+                                        <td>2024-01-01 00:00</td>
+                                        <td>결제완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="check_each"></td>
+                                        <td>202401010001</td>
+                                        <td>와이드슬랙스</td>
+                                        <td>Black / XL</td>
+                                        <td>1</td>
+                                        <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
+                                        <td>010-0000-0000</td>
+                                        <td>2024-01-01 00:00</td>
+                                        <td>결제완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="check_each"></td>
+                                        <td>202401010001</td>
+                                        <td>와이드슬랙스</td>
+                                        <td>Black / XL</td>
+                                        <td>1</td>
+                                        <td>홍길동</td>
+                                        <td>서울시 성북구 OO아파트 OOO동 OOOO호</td>
+                                        <td>010-0000-0000</td>
+                                        <td>2024-01-01 00:00</td>
+                                        <td>결제완료</td>
                                     </tr>
                                 </table>
                             </div>
@@ -311,6 +328,16 @@
                             <a href="">4</a>
                             <a href="">5</a>
                             <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                        <div class="order_search">
+                            <form action="" method="post">
+                                <select name="search_option">
+                                    <option value="product_name" selected>상품명</option>
+                                    <option value="name">주문자명</option>
+                                </select>
+                                <input type="text" name="search_word" placeholder="검색어를 입력해주세요">
+                                <button type="submit">검색</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -355,7 +382,6 @@
     </footer>
 </body>
 <script type="text/javascript" src="js/checkboxCtrl.js"></script>
-<script type="text/javascript" src="js/returnMNG.js"></script>
 <script type="text/javascript" src="js/openSearch.js"></script>
 <script type="text/javascript" src="js/fixedMenu.js"></script>
 </html>
