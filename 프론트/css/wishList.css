@@ -3,13 +3,24 @@
     margin:0 auto;
 }
 .title{
-    font-size:35px;
-    font-weight:bold;
-    color: #FFAEC9;
+    width:100%;
+    position:relative;
+    margin-bottom: 25px;
 }
-.title > div {
-    margin:75px auto;
-    width:160px;
+.title div:last-child{
+    font-size:35px;
+    color:#ffffff;
+    font-weight:bold;
+    position:absolute;
+    top:42%; text-align:center;
+    width:100%;
+}
+.image{
+    overflow:hidden;
+    height:250px;
+}
+.image img{
+    width:100%;
 }
 button,input[type="submit"]{
     -webkit-appearance: none;
@@ -50,6 +61,7 @@ input[type="submit"]{
 .img_href img{
     width:150px;
     height:150px;
+    object-fit: cover;
 }
 .product_info{
     padding:20px;
