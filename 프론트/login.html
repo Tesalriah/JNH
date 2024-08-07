@@ -9,11 +9,41 @@
     <link rel="stylesheet" href="css/login.css">
     <title>로그인</title>
 </head>
+<style>
+.loding_fix{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.loading_circle {
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  
+  border: 10px solid #e3e3e3;
+  border-bottom: 10px solid #FFAEC9;
+  border-radius: 50%;
+  
+  animation: load 1.5s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
 <body>
     <div class="container">
         <div class="logo"><a href="main.html">J&H</a></div>
         <form method="post" action="">
             <div class="input_id"><i class="fa-regular fa-id-card"></i><input type="text" name="jnh_id" placeholder="아이디"><br></div>
+            <div class="loding_fix">
+                <div class="loading_circle"></div>
+            </div>
             <div class="input_pwd"><i class="fa-solid fa-lock"></i><input type="password" name="pwd" placeholder="비밀번호"><br></div>
             <div class="menu"><input type="checkbox" id="save_id"><label for="save_id">아이디 저장</label> <a href="findId.html">아이디 / 비밀번호 찾기</a></div>
             <div class="button_menu">
