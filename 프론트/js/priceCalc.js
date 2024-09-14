@@ -5,6 +5,15 @@ const price = document.getElementsByName('price');
 const total = document.querySelector('#total');
 const tInput = document.getElementsByName('total');
 
+function totalSet(result){
+    tInput[0].value = result;
+    total.innerHTML = result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+window.onload = function(){
+    totalPrice = price[0].value * quantity[0].value;
+    totalSet(totalPrice);
+}
+
 for(let i=0; i<quantity.length; i++){
     quantity[i].addEventListener('input',function(){
     quantity[i].value = quantity[i].value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
@@ -16,7 +25,7 @@ for(let i=0; i<quantity.length; i++){
         quantity[i].value = '1';
     }
     totalPrice = price[0].value * quantity[0].value;
-    total.innerHTML = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    totalSet(totalPrice);
     })
 
 q_minus[i].addEventListener('click',function(){
@@ -25,7 +34,7 @@ q_minus[i].addEventListener('click',function(){
         quantity[i].value = String(n_quantity);
     }
     totalPrice = price[0].value * quantity[0].value;
-    total.innerHTML = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    totalSet(totalPrice);
     })
 
 q_plus[i].addEventListener('click',function(){
@@ -34,7 +43,6 @@ q_plus[i].addEventListener('click',function(){
         quantity[i].value = String(n_quantity);
     }
     totalPrice = price[0].value * quantity[0].value;
-    tInput[0].value = totalPrice;
-    total.innerHTML = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    totalSet(totalPrice);
     })
 }
