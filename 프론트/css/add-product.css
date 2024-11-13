@@ -19,8 +19,8 @@
 .add_table > div:not(.add_table > div:last-child){
     border-bottom:1px solid #dddddd;
 }.add_table > div > div{
-    padding:15px;
-}
+     padding:15px;
+ }
 .add_table > div > div:first-child{
     width:20%;
     text-align: center;

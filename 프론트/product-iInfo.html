@@ -78,7 +78,7 @@
                 </div>
                 <div class="info" style="width:45%;">
                     <form action="" method="post">
-                        <div class="name">PRODUCT NAME</div>
+                        <div class="name">PRODUCT NAME<span class="wish_btn"><i id="heart" class="fa-regular fa-heart"></i></span></div>
                         <div class="price"><input name="price" type="hidden" value="150000">150,000₩&nbsp;<del>200,000₩</del></div>
                         <div class="delivery_fee"><div>Delivery Fee</div><div>3,000₩</div></div>
                         <div class="color">
@@ -110,7 +110,8 @@
                             </div>
                         </div>
                         <div class="product_button">
-                            <button type="button">Add Cart</button><button type="button">Buy</button>
+                            <input type="submit" value="Add Cart">
+                            <input type="submit" value="Buy">
                         </div>
                     </form>
                 </div>
@@ -407,6 +408,19 @@
         </div>
     </footer>
 </body>>
+<script>
+    const heart = document.getElementById('heart');
+
+    heart.addEventListener('click', function(){
+        if(heart.classList == 'fa-regular fa-heart'){
+
+            heart.className = 'fa-solid fa-heart';
+        }else if(heart.classList == 'fa-solid fa-heart'){
+            
+            heart.className = 'fa-regular fa-heart';
+        }
+    })
+</script>
 <script src="js/priceCalc.js"></script>
 <script src="js/reviewNquestion.js"></script>
 <script src="js/sizeInsert.js"></script>
