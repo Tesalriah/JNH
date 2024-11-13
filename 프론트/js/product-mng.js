@@ -1,6 +1,6 @@
-const productPrice = document.getElementsByName('product_price');
-const productDiscount = document.getElementsByName('product_discount');
-const productStock = document.getElementsByName('product_stock');
+const productPrice = document.getElementsByName('price');
+const productDiscount = document.getElementsByName('discount');
+const productStock = document.getElementsByName('stock');
 let savePrevPrice = 0;
 let savePrevstock = 0;
 let savePrevDiscount = 0;
@@ -106,3 +106,9 @@ function Slimit(stock){
         savePrevstock = isvalStock;
     }
 }
+
+
+const submitBtn = document.getElementById('submit');
+submitBtn.addEventListener('click',function(){
+    confirm("작성하시겠습니까?");
+})

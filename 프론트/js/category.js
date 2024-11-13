@@ -3,7 +3,6 @@ const setWomen = document.querySelector('#set_women');
 const setTops = document.querySelector('#set_tops');
 const setBottom = document.querySelector('#set_bottom');
 const setOuter = document.querySelector('#set_outer');
-const setArrow = document.querySelector('display_category span:last-child');
 const arr = [setTops, setBottom, setOuter];
 const arrG = [setMen, setWomen];
 let setValue = '';
@@ -51,7 +50,7 @@ const emptied = document.querySelector('.emptied');
 const genderSpan = document.querySelector('#gender_span');
 const categorySpan = document.querySelector('#category_span');
 const productCategory = document.getElementsByName('category');
-const productGender = document.getElementsByName('product_gender');
+const productGender = document.getElementsByName('gender');
 const arrow = document.querySelector('#arrow');
 
 function genderSet(val){

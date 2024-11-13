@@ -1,3 +1,6 @@
+body{
+    background-color: #FFAEC9;
+}
 main{
     background-color: #FFAEC9;
 }
@@ -28,6 +31,9 @@ main{
     font-weight:bold;
     border: 1px solid #dddddd;
     background-color: #ffffff;
+}
+.auth_box button[type=submit]:hover{
+    cursor:pointer;
 }
 .auth_form{
     font-size:18px;

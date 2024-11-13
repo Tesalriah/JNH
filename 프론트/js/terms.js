@@ -6,11 +6,11 @@ okBtn.addEventListener("click",function(){
     if(allBtn.checked == false)
         alert('J&H 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.');
     if(allBtn.checked == true)
-        location.href='signUp.html';
+        location.href='signUp';
 })
 
 cancelBtn.addEventListener('click', function (){
-    location.href = 'main.html';
+    history.back();
 })
 
 allBtn.addEventListener("click", function(){
@@ -32,7 +32,7 @@ for(let i=1; i<checkAll.length; i++){
     checkAll[i].addEventListener("click", function(){
         console.log(i);
         if(checkAll[1].checked == true && checkAll[2].checked == true && checkAll[3].checked == true){
-        checkAll[0].checked = true;
+            checkAll[0].checked = true;
         }
         if(checkAll[i].checked == false){
             checkAll[0].checked = checkAll[i].checked;
