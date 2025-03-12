@@ -13,8 +13,12 @@
 .report_top > div:first-child{
     width: 30%;
 }
-.report_middle, .report_bottom{
-    margin-top:15px;
+.report_middle{
+    margin-top:20px;
+    display: flex;
+}
+.report_bottom{
+    margin-top: 15px;
     display: flex;
 }
 .report_middle{
@@ -28,9 +32,10 @@
 .report_middle div:last-child{
     margin-left:10px;
     width:100%;
-    border:1px solid #999999;
-    padding:5px;
+    border:1px solid #aaaaaa;
+    padding:8px;
     cursor:text;
+    border-radius: 5px;
 }
 .report_bottom{
     flex-direction: column;
@@ -42,10 +47,11 @@
 }
 .report_bottom > div:last-child{
     margin-top: 10px;
-    border:1px solid #999999;
+    border:1px solid #aaaaaa;
     min-height: 100px;
-    padding: 5px;
+    padding: 8px;
     cursor:text;
+    border-radius: 5px;
 }
 .paging{
     text-align:center;
