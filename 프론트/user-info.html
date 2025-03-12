@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/editUser.css">
+    <link rel="stylesheet" href="css/user-info.css">
     <title>J&H</title>
 </head>
 <body>
@@ -100,7 +100,12 @@
                         </tr>
                         <tr>
                             <td>주소</td>
-                            <td><input name="user_address" type="text" value="서울시 성북구 장위동 OO아파트 OOO동 OOOO호" readonly><button type="button" id="change_address">주소찾기</button></td>
+                            <td>
+                                <div>
+                                    <input type="text" class="address" name="address" value="서울시 동대문구 이문동 OO아파트" readonly><button type="button" class="find_address" id="change_address">주소찾기</button>
+                                </div>
+                                <div style="display:none; margin-top: 15px;"><input type="text" class="address_detail" name="address2" placeholder="상세주소"><button type="submit" id="change_address2"> ">주소변경</button></div>
+                            </td>
                         </tr>
                     </table>
                     <div class="right">회원탈퇴를 원하시면 우측의 회원탈퇴 버튼을 눌러주세요<button id="withdrawal" type="button">회원탈퇴</button></div>
@@ -111,7 +116,7 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer>    
         <div class="footer">
             <div class="shopInfo">
                 <div class="logo" style="color:#fff;"><a href="main.html">J&H</a></div>
