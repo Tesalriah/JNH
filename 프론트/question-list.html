@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/sideMenu.css">
-    <link rel="stylesheet" href="css/questionList.css">
+    <link rel="stylesheet" href="css/side-menu.css">
+    <link rel="stylesheet" href="css/question-list.css">
     <title>J&H</title>
 </head>
 <body>
@@ -93,14 +93,17 @@
                         <div style=" border-bottom: none;"><a href="#">상품문의</a></div>
                     </div>
                     <div class="questions_contents">
-                        <div class="questions_each">
-                            <div class="question_top">
-                                <span class="question_span">질문</span><a href="">상품명</a><div style="float: right; font-weight:100;">2024-01-01</div>
+                        <c:forEach item="${list}" var="list">
+                            <div class="questions_each">
+                                <div class="question_top">
+                                    <span class="question_span">${list.ano == 1 ? "질문" : "답변"}</span><a href="">${list.product_name}</a><div style="float: right; font-weight:100;">${list.reg_date}</div>
+                                </div>
+                                <div class="question_bottom">
+                                    ${list.contents}
+                                </div>
                             </div>
-                            <div class="question_bottom">
-                                질문내용
-                            </div>
-                        </div>
+                        </c:forEach>
+                       
                         <div class="answer_each">
                             <div class="question_top">
                                 답변 대기중입니다
@@ -172,13 +175,22 @@
                         </div>
                     </div>
                     <div class="paging">
+                        <c:if test = ${showPrev}>
+                            <a href="<c:url value='/mypage/asking/question?page=${beginPage-1}'/>"><i class="fa-solid fa-angle-right"></i></a>
+                        </c:if>
+                        <c:foreach var="i" begin="${ph.beginPage}" end = #{endPage}>
+                            <a href="<c:url value='/mypage/asking/question?page=${i}'/>"> i</a>
+                        </c:foreach>
+                        <c:if test = ${showNext}>
+                            <a href="<c:url value='/mypage/asking/question?page=${endPage+1}'/>"><i class="fa-solid fa-angle-right"></i></a>
+                        </c:if>
                         <a href=""><i class="fa-solid fa-angle-left"></i></a>
                         <a href="">1</a>
                         <a href="">2</a>
                         <a href="">3</a>
                         <a href="">4</a>
                         <a href="">5</a>
-                        <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                        <a href="" onclick="함수(i)"><i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>

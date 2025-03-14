@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/productInfo.css">
-    <link rel="stylesheet" href="css/reviewNquestion.css">
+    <link rel="stylesheet" href="css/product-info.css">
+    <link rel="stylesheet" href="css/review-question.css">
     <title>J&H</title>
 </head>
 <body>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="info" style="width:45%;">
                     <form action="" method="post">
-                        <div class="name">PRODUCT NAME<span class="wish_btn"><i id="heart" class="fa-regular fa-heart"></i></span></div>
+                        <div class="name">PRODUCT NAME<span class="wish_btn"><i id="heart" class="fa-regular fa-heart"></i><span id="wish_cnt">100</span></span></div>
                         <div class="price"><input name="price" type="hidden" value="150000">150,000₩&nbsp;<del>200,000₩</del></div>
                         <div class="delivery_fee"><div>Delivery Fee</div><div>3,000₩</div></div>
                         <div class="color">
@@ -410,8 +410,9 @@
 </body>>
 <script>
     const heart = document.getElementById('heart');
+    const wishBtn = document.querySelector('.wish_btn');
 
-    heart.addEventListener('click', function(){
+    wishBtn.addEventListener('click', function(){
         if(heart.classList == 'fa-regular fa-heart'){
 
             heart.className = 'fa-solid fa-heart';
@@ -421,10 +422,10 @@
         }
     })
 </script>
-<script src="js/priceCalc.js"></script>
-<script src="js/reviewNquestion.js"></script>
-<script src="js/sizeInsert.js"></script>
-<script src="js/scrollMove.js"></script>
-<script src="js/openSearch.js"></script>
-<script src="js/fixedMenu.js"></script>
+<script src="js/price-cal.js"></script>
+<script src="js/review-question.js"></script>
+<script src="js/size-insert.js"></script>
+<script src="js/scroll-move.js"></script>
+<script src="js/open-search.js"></script>
+<script src="js/fixed-menu.js"></script>
 </html>
