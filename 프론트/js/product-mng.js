@@ -108,7 +108,7 @@ function Slimit(stock){
 }
 
 
-const submitBtn = document.getElementById('submit');
-submitBtn.addEventListener('click',function(){
-    confirm("작성하시겠습니까?");
-})
+// const submitBtn = document.getElementById('submit');
+// submitBtn.addEventListener('click',function(){
+//     confirm("작성하시겠습니까?");
+// })

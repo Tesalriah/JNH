@@ -16,8 +16,10 @@
     width: 30%;
 }
 .return_bottom{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-auto-rows: minmax(auto, max-content);
+    gap: 10px;
 }
 .return_bottom > div{
     min-height: 150px;
@@ -29,7 +31,6 @@
     padding:15px;
 }
 .product_name{
-    width:70%;
     border-right: 1px solid #dddddd;
 }
 .product_name div{
@@ -39,7 +40,6 @@
     padding:0 3px 9.2px 3px;
 }
 .info{
-    width:15%;
     text-align: center;
     border-right: 1px solid #dddddd;
 }
@@ -48,7 +48,6 @@
 }
 .status{
     display: flex;
-    width:15%;
     text-align: center;
 }
 .paging{

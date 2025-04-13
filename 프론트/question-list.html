@@ -93,17 +93,14 @@
                         <div style=" border-bottom: none;"><a href="#">상품문의</a></div>
                     </div>
                     <div class="questions_contents">
-                        <c:forEach item="${list}" var="list">
-                            <div class="questions_each">
-                                <div class="question_top">
-                                    <span class="question_span">${list.ano == 1 ? "질문" : "답변"}</span><a href="">${list.product_name}</a><div style="float: right; font-weight:100;">${list.reg_date}</div>
-                                </div>
-                                <div class="question_bottom">
-                                    ${list.contents}
-                                </div>
+                        <div class="questions_each">
+                            <div class="question_top">
+                                <span class="question_span">질문</span><a href="">상품명</a><div style="float: right; font-weight:100;">2024-01-01</div>
                             </div>
-                        </c:forEach>
-                       
+                            <div class="question_bottom">
+                                질문내용
+                            </div>
+                        </div>
                         <div class="answer_each">
                             <div class="question_top">
                                 답변 대기중입니다
@@ -233,6 +230,6 @@
         </div>
     </footer>
 </body>
-<script src="js/openSearch.js"></script>
-<script src="js/fixedMenu.js"></script>
+<script src="js/open-search.js"></script>
+<script src="js/fixed-menu.js"></script>
 </html>

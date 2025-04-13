@@ -3,6 +3,7 @@
 }
 .status_menu{
     display: flex;
+    width: 70%;
 }
 .status_menu > div{
     width:20%;
@@ -84,8 +85,8 @@
     top: 50%; 
     transform: translate(-50%, -50%);
     background-color:#ffffff;
-    width:500px;
-    height:350px;
+    width:600px;
+    height:500px;
     z-index:999;
 }
 .modal_title{
@@ -93,7 +94,7 @@
     justify-content: space-between;
     align-items: center;
     padding:30px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 }
 .modal_title button{
@@ -104,31 +105,27 @@
     cursor: pointer;
 }
 .modal_main{
-    padding:0 30px 30px 30px;
-}
-.modal_main div:first-child{
-    display: flex;
-    align-items: center;
+    padding:10px;
+    margin:0 20px;
+    border-top:1px solid #dddddd; 
 }
 .modal_main > div:last-child{
     margin-top: 10px;
 }
-.modal_main div:first-child > div:first-child{
-    width:35px;
-}
 #modal_reason{
-    width:100%;
-    padding:5px;
-    border:1px solid #dddddd;
+    padding:8px;
+    border:1px solid #777777;
+    border-radius: 3px;
     font-size:14px;
-    margin-left: 10px;
+    margin-top:10px;
 }
 #modal_content{
     padding:5px;
-    border:1px solid #dddddd;
+    border:1px solid #777777;
+    border-radius: 3px;
     font-size:14px;
-    margin-top:5px;
-    height:130px;
+    margin-top:10px;
+    height:200px;
 }
 .paging{
     margin-top:50px;

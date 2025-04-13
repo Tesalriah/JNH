@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/side-menu.css">
-    <link rel="stylesheet" href="css/return-list.css">
+    <link rel="stylesheet" href="css/quetion-mng.css">
     <title>J&H</title>
 </head>
 <body>
@@ -68,154 +68,104 @@
         <div class="container">
             <div class="title">
                 <div class="image">
-                    <img src="img/house.jpg">
+                    <img src="img/admin.png">
                 </div>
-                <div style="font-family: 'Raleway', sans-serif;">Mypage</div>
+                <div style="font-family: 'Raleway', sans-serif;">Admin Page</div>
             </div>
             <div class="nav">
                 <div class="left_menu">
-                    <div><a href="orderList.html">주문목록</a></div>
-                    <div><a href="">취소/반품/교환</a></div>
-                    <div><a href="">찜리스트</a></div>
-                    <br>
-                    <div><a href="">개인정보 확인/수정</a></div>
-                    <div><a href="">신고내역확인</a></div>
-                    <br>
+                    <div><a href="">상품관리</a></div>
+                    <div><a href="">유저관리</a></div>
+                    <div><a href="">신고관리</a></div>
+                    <div><a href="">문의관리</a></div>
+                    <div><a href="">취소/반품/교환관리</a></div>
+                    <div><a href="">주문관리</a></div>
                     <div><a href="">리뷰관리</a></div>
-                    <br>
-                    <div><a href="">문의하기</a></div>
-                    <div><a href="">문의내역확인</a></div>
                 </div>
                 <div class="contents">
-                    <h2>취소/반품/교환 내역</h2>
-                    <div class="return_list">
-                        <div class="return">
-                            <div class="return_top">
-                                <div>취소접수일 : 2024/01/01</div>
-                                <div>주문일 : 2024/01/01</div>
+                    <h2>문의관리</h2>
+                    <div class="top_nav">
+                        <div><a href="">1:1 문의</a></div>
+                        <div style=" border-bottom: none;"><a href="">상품문의</a></div>
+                    </div>
+                    <div class="questions_contents" data-url="/admin/question-answer">
+                        <div class="product_img">
+                            <a href="">
+                                <img src="img/main1.jpg">
+                                상품명
+                            </a>
+                        </div>
+                        <div class="questions_each">
+                            <div class="question_top">
+                                <span class="question_span">질문</span><a href="">asd123</a><div style="float: right; font-weight:100;">2024-01-01</div>
                             </div>
-                            <div class="return_bottom">
-                                <div class="product_name">
-                                    <div>
-                                        상품명
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                </div>
-                                <div class="status">
-                                    <div>   
-                                        취소완료
-                                    </div>
-                                </div>
+                            <div class="question_bottom">
+                                질문내용
+                                <button class="answer_btn" data-qno="1" data-product_id="202401010001">답변하기</button>
                             </div>
                         </div>
-                        <div class="return">
-                            <div class="return_top">
-                                <div>반품접수일 : 2024/01/01</div>
-                                <div>주문일 : 2024/01/01</div>
+                        <div class="product_img">
+                            <a href="">
+                                <img src="img/main1.jpg">
+                                상품명
+                            </a>
+                        </div>
+                        <div class="questions_each">
+                            <div class="question_top">
+                                <span class="question_span">질문</span><a href="">zxcv</a><div style="float: right; font-weight:100;">2024-01-01</div>
                             </div>
-                            <div class="return_bottom">
-                                <div class="product_name">
-                                    <div>
-                                        상품명
-                                    </div><div>
-                                        상품명
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                </div>
-                                <div class="status">
-                                    <div>   
-                                        반품완료
-                                    </div>
-                                </div>
+                            <div class="question_bottom">
+                                질문내용
+                                <button class="answer_btn" data-qno="1" data-product_id="202401010001">답변하기</button>
                             </div>
                         </div>
-                        <div class="return">
-                            <div class="return_top">
-                                <div>교환접수일 : 2024/01/01</div>
-                                <div>주문일 : 2024/01/01</div>
+                        <div class="product_img">
+                            <a href="">
+                                <img src="img/main1.jpg">
+                                상품명
+                            </a>
+                        </div>
+                        <div class="questions_each">
+                            <div class="question_top">
+                                <span class="question_span">질문</span><a href="">asd123</a><div style="float: right; font-weight:100;">2024-01-01</div>
                             </div>
-                            <div class="return_bottom">
-                                <div class="product_name">
-                                    <div>
-                                        상품명
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                </div>
-                                <div class="status">
-                                    <div>   
-                                        교환완료
-                                    </div>
-                                </div>
+                            <div class="question_bottom">
+                                질문내용
+                                <button class="answer_btn" data-qno="1" data-product_id="202401010001">답변하기</button>
                             </div>
                         </div>
-                        <div class="return">
-                            <div class="return_top">
-                                <div>취소접수일 : 2024/01/01</div>
-                                <div>주문일 : 2024/01/01</div>
+                        <div class="product_img">
+                            <a href="">
+                                <img src="img/main1.jpg">
+                                상품명
+                            </a>
+                        </div>
+                        <div class="questions_each">
+                            <div class="question_top">
+                                <span class="question_span">질문</span><a href="">adad12</a><div style="float: right; font-weight:100;">2024-01-01</div>
                             </div>
-                            <div class="return_bottom">
-                                <div class="product_name">
-                                    <div>
-                                        상품명
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                </div>
-                                <div class="status">
-                                    <div>   
-                                        취소완료
-                                    </div>
-                                </div>
+                            <div class="question_bottom">
+                                질문내용
+                                <button class="answer_btn" data-qno="1" data-product_id="202401010001">답변하기</button>
                             </div>
                         </div>
-                        <div class="return">
-                            <div class="return_top">
-                                <div>취소접수일 : 2024/01/01</div>
-                                <div>주문일 : 2024/01/01</div>
+                        <div class="product_img">
+                            <a href="">
+                                <img src="img/main1.jpg">
+                                상품명
+                            </a>
+                        </div>
+                        <div class="questions_each">
+                            <div class="question_top">
+                                <span class="question_span">질문</span><a href="">zxcv</a><div style="float: right; font-weight:100;">2024-01-01</div>
                             </div>
-                            <div class="return_bottom">
-                                <div class="product_name">
-                                    <div>
-                                        상품명
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div>
-                                        <div>1개</div>
-                                        <div>150,000원</div>
-                                    </div>
-                                </div>
-                                <div class="status">
-                                    <div>   
-                                        취소완료
-                                    </div>
-                                </div>
+                            <div class="question_bottom">
+                                질문내용
+                                <button class="answer_btn" data-qno="1" data-product_id="202401010001">답변하기</button>
                             </div>
                         </div>
                     </div>
+                
                     <div class="paging">
                         <a href=""><i class="fa-solid fa-angle-left"></i></a>
                         <a href="">1</a>
@@ -265,7 +215,28 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelector('.questions_contents').addEventListener('click', function(event){
+            if(event.target.classList.contains('answer_btn')){
+                document.querySelectorAll('.answer_each').forEach(el => el.remove());
+                event.target.scrollIntoView({
+                    block: 'center'
+                });
+                var str = ' <div class="answer_each">';
+                str += '<form method="post" action='+ document.querySelector('.questions_contents').dataset.url +'>';
+                str += '<input type="hidden" name="qno" value="' + event.target.dataset.qno +'">';
+                str += '<input type="hidden" name="product_id" value="' + event.target.dataset.product_id +'">';
+                str += '<div class="text_area">';
+                str += '<textarea name="centents" rows="5" placeholder="답변을 입력해주세요"></textarea><button>작성</button>';
+                str += '</div>';
+                str += '</form>';
+                str += '</div>';
+
+                event.target.parentElement.parentElement.insertAdjacentHTML("afterend", str);
+            }
+        });
+    </script>
 </body>
-<script src="js/open-search.js"></script>
-<script src="js/fixed-menu.js"></script>
+<script type="text/javascript" src="js/open-search.js"></script>
+<script type="text/javascript" src="js/fixed-menu.js"></script>
 </html>
